@@ -65,22 +65,21 @@ function PartnershipLogos() {
     <Marquee
       pauseOnHover
       pauseOnClick
-      className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+      className="mt-10 flex gap-16 items-end w-full"
     >
-      {partnershipLogos?.map((partnerLogo, i) => (
+      {partnershipLogos?.map((partnerLogo) => (
         <a
-          key={i}
+          key={crypto.randomUUID()}
           href={partnerLogo?.link}
           target="_blank"
           rel="noopener noreferrer"
+          className="ml-16"
         >
           <LazyLoadImage
             effect="blur"
             className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
             src={partnerLogo?.logo}
-            alt="Transistor"
-            width={178}
-            height={76}
+            alt={partnerLogo?.name}
           />
         </a>
       ))}
