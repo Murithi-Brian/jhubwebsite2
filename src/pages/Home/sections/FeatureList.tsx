@@ -7,7 +7,7 @@ import {
   IconStarsFilled,
   IconRocket,
 } from "@tabler/icons-react";
-import FeatureListImg from "../../assets/images/home/featureList.png";
+import FeatureListImg from "../../../assets/images/home/featureList.png";
 
 const featureList = [
   {

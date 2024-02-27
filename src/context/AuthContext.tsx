@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth, googleProvider } from '../firebase';
+import { auth, googleProvider } from '../js/firebase';
 import { signInWithPopup, signOut } from 'firebase/auth';
 
 export interface UserType {

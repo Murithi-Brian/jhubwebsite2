@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function UnderMaintenance() {
   return (
     <section className="bg-white dark:bg-boxdark dark:text-white">

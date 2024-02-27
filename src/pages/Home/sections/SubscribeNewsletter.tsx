@@ -1,8 +1,8 @@
 import { SetStateAction, useState } from "react";
 import { Link } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../js/firebase";
-import { AlertDanger, AlertSuccess } from "../alerts";
+import { db } from "../../../js/firebase";
+import { AlertDanger, AlertSuccess } from "../../../components/alerts";
 
 export default function SubscribeNewsletter() {
   const [email, setEmail] = useState("");
@@ -36,8 +36,12 @@ export default function SubscribeNewsletter() {
 
       setSubmitSuccess(true);
       setTimeout(() => setSubmitSuccess(false), 3500);
-    } catch (error) {
-      console.error("Error subscribing user:", error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Error subscribing user:", error.message);
+      } else {
+        console.error("Error subscribing user:", error);
+      }
       setSubmitError(true);
       setTimeout(() => setSubmitError(false), 3500);
     }

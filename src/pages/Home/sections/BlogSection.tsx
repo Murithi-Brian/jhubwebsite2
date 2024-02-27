@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import SmallScaleImg from "../../assets/images/blogs/small-scale-farmers.avif";
-import DigitalSustainabilityImg from "../../assets/images/blogs/digital-sustainability-blog.jpg";
-import JhubLogo from "../../assets/images/logo/jhub-logo-new.svg";
-import BlogCard from "./BlogCard";
+import SmallScaleImg from "../../../assets/images/blogs/small-scale-farmers.avif";
+import DigitalSustainabilityImg from "../../../assets/images/blogs/digital-sustainability-blog.jpg";
+import JhubLogo from "../../../assets/images/logo/jhub-logo-new.svg";
+import BlogCard from "../../../components/Home/BlogCard";
 import {
   GeorgeGathoni,
   RehemaNdeda,
   LawrenceNderu,
-} from "../../assets/images/team";
-import { BlogPostProps } from "../../types/home";
+} from "../../../assets/images/team";
+import { BlogPostProps } from "../../../types/home";
 
 const BlogList: BlogPostProps[] = [
   {

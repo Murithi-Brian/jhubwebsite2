@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import React from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // TODO
 {
@@ -40,7 +39,8 @@ export default function WriteAComment() {
           <footer className="flex justify-between items-center mb-2">
             <div className="flex items-center">
               <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-                <Image
+                <LazyLoadImage
+                  effect="blur"
                   className="mr-2 w-6 h-6 rounded-full"
                   src=""
                   alt="Wilson Gichu"
@@ -139,7 +139,8 @@ export default function WriteAComment() {
           <footer className="flex justify-between items-center mb-2">
             <div className="flex items-center">
               <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-                <Image
+                <LazyLoadImage
+                  effect="blur"
                   className="mr-2 w-6 h-6 rounded-full"
                   src=""
                   alt="Jese Leos"
@@ -235,7 +236,8 @@ export default function WriteAComment() {
           <footer className="flex justify-between items-center mb-2">
             <div className="flex items-center">
               <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-                <Image
+                <LazyLoadImage
+                  effect="blur"
                   className="mr-2 w-6 h-6 rounded-full"
                   src=""
                   alt="Bonnie Green"
@@ -332,7 +334,8 @@ export default function WriteAComment() {
           <footer className="flex justify-between items-center mb-2">
             <div className="flex items-center">
               <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-                <Image
+                <LazyLoadImage
+                  effect="blur"
                   className="mr-2 w-6 h-6 rounded-full"
                   src=""
                   alt="Helene Engels"

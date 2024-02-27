@@ -1,8 +1,8 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import NetworkImg from "../../assets/images/home/networkImg.jpg";
-import EventsImg from "../../assets/images/home/eventsImg.png";
-import ResourcesImg from "../../assets/images/home/resourcesImg.jpg";
+import NetworkImg from "../../../assets/images/home/networkImg.jpg";
+import EventsImg from "../../../assets/images/home/eventsImg.png";
+import ResourcesImg from "../../../assets/images/home/resourcesImg.jpg";
 
 const CommunityHighlights = () => {
   return (

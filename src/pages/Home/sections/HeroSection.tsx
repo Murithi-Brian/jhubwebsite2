@@ -1,13 +1,13 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import HeroImg from "../../assets/images/hero-img-innovation-hub.jpg";
+import HeroImg from "../../../assets/images/hero-img-innovation-hub.jpg";
 import {
   jkuates,
   fundingbox,
   impactafrica,
   aedibnet,
   taimba,
-} from "../../assets/images/logo";
+} from "../../../assets/images/logo";
 import Marquee from "react-fast-marquee";
 
 export const partnershipLogos = [

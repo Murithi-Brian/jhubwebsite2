@@ -6,7 +6,7 @@ import {
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import { classNames } from "../../utils/classes";
+import { classNames } from "../../../utils/classes";
 
 function Team() {
   let [categories] = useState({
