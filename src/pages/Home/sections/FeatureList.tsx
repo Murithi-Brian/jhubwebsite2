@@ -7,7 +7,7 @@ import {
   IconStarsFilled,
   IconRocket,
 } from "@tabler/icons-react";
-import FeatureListImg from "../../../assets/images/home/featureList.png";
+import FeatureListImg from "../../../assets/home/featureList.png";
 
 const featureList = [
   {
@@ -86,8 +86,8 @@ export default function FeatureList() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {featureList.map((feature, i) => (
-                <div key={i} className="flex flex-col space-y-4 sm:w-96">
+              {featureList.map((feature) => (
+                <div key={crypto.randomUUID()} className="flex flex-col space-y-4 sm:w-96">
                   <div className="flex justify-center items-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary-100 dark:bg-primary-900">
                     {feature?.icon}
                   </div>

@@ -7,7 +7,7 @@ import FAQ from "./sections/FAQ";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <LandingHeroSection />
       <FeatureList />
       <CommunityHighlights />

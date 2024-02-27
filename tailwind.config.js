@@ -48,6 +48,7 @@ module.exports = {
       "neutral-blue": "#0F172A",
       "secondary-blue": "#475569",
       "secondary-background": "#F6F9FF",
+      "primary-purple": "#6941C6",
 
       /********
        *TODO, Importing a new primary , this will probably break the theming and so on...
@@ -93,21 +94,20 @@ module.exports = {
       },
       current: "currentColor",
       transparent: "transparent",
-      white: "#FFFFFF",
       black: "#1C2434",
       "black-2": "#010101",
       body: "#64748B",
       bodydark: "#AEB7C0",
       bodydark1: "#DEE4EE",
       bodydark2: "#8A99AF",
-      primary: "#3C50E0",
       secondary: "#80CAEE",
       stroke: "#E2E8F0",
-      gray: "#EFF4FB",
-      graydark: "#333A48",
+      gray: "#475467", // I changed this on purpose
+      graydark: "#101828", // I changed this on purpose
       "gray-2": "#F7F9FC",
       "gray-3": "#FAFAFA",
       whiten: "#F1F5F9",
+      primary: "#3C50E0",
       whiter: "#F5F7FD",
       boxdark: "#24303F",
       "boxdark-2": "#1A222C",
@@ -135,11 +135,11 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        "title-xxl": ["56px", "61px"],
-        "title-xl": ["36px", "45px"],
+        "title-xxl": ["56px", "61px"], // I changed this on purpose
+        "title-xl": ["40px", "48px"], // I changed this on purpose
         "title-xl2": ["32px", "35px"],
         "title-lg": ["28px", "35px"],
-        "title-md": ["24px", "30px"],
+        "title-md": ["22px", "px"], // I changed this on purpose
         "title-md2": ["26px", "30px"],
         "title-sm": ["20px", "26px"],
         "title-xsm": ["18px", "24px"],
