@@ -1,59 +1,122 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import HeroImg from "../../assets/images/hero-img-innovation-hub.jpg"
+import HeroImg from "../../assets/images/hero-img-innovation-hub.jpg";
+import {
+  jkuates,
+  fundingbox,
+  impactafrica,
+  aedibnet,
+  taimba,
+} from "../../assets/images/logo";
+import Marquee from "react-fast-marquee";
 
-function LandingHeroSection() {
-  const [show, setShow] = useState(false);
+export const partnershipLogos = [
+  {
+    name: "JKUAT Enterprises",
+    logo: jkuates,
+    description: "",
+    link: "https://jkuates.co.ke/index.php/",
+    // description: `A trailblazer in industry innovation, JKUAT Enterprises pioneers the creation and
+    // global commercialization of cutting-edge, research-based solutions. From product innovation to
+    // emerging technologies, training, and consultancy, we push boundaries to shape the future, contributing
+    // significantly to various industries.`
+  },
+  {
+    name: "FundingBox",
+    logo: fundingbox,
+    link: "https://fundingbox.com/",
+    description: "",
+    // description: `At FundingBox, we're not just fostering growth; We are #FundingChampions in every corner of our dynamic ecosystem.
+    // Join the ranks of #FundingChampions with FundingBox, where growth meets opportunity. Elevate your trajectory and redefine your future
+    // with accessible funding opportunities, exclusive partnerships with global brands.`
+  },
+  {
+    name: "Impact Africa Network",
+    logo: impactafrica,
+    link: "https://impactafrica.network/",
+    description: "",
+    // description: `At FundingBox, we're not just fostering growth; We are #FundingChampions in every corner of our dynamic ecosystem.
+    // Join the ranks of #FundingChampions with FundingBox, where growth meets opportunity. Elevate your trajectory and redefine your future
+    // with accessible funding opportunities, exclusive partnerships with global brands.`
+  },
+  // ian-logo.png
+  {
+    name: "AEDIB | NET",
+    logo: aedibnet,
+    link: "https://aedibnet.eu/",
+    description: "",
+    // description: `AEDIB|NET aims to fortify a shared African-European digital innovation ecosystem, supporting local digital
+    // innovation and start-up ecosystems in Africa. AEDIB|NET mission includes facilitating collaboration between European and African DIHs,
+    // contributing to the growth and advancement of digital initiatives that build and prepare new ventures emerging on the continents.`
+  },
+  {
+    name: "TAIMBA",
+    logo: taimba,
+    link: "https://taimba.co.ke/",
+    description: "",
+    // description: `Taimba is dedicated to establishing enduring and impactful relationships between farmers and retailers. We realize this
+    // vision through an innovative mobile-based cashless business-to-business platform connecting farmers directly to retailers. Our approach
+    // revolutionizes the agricultural supply chain, fostering efficiency and sustainability in the farming industry.`
+  },
+];
 
+function PartnershipLogos() {
   return (
-    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
-        <div className="lg:col-span-3">
-          <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white">
-            Innovation for Transformation.
-          </h1>
-          <p className="mt-3 text-lg text-gray-800 dark:text-white">
-            We are a one-stop hub offering comprehensive array of digital
-            solutions for societal needs.
-          </p>
-
-          <div className="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
-            <Link
-              className="w-full bg-success sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              to="/about-jhub"
-            >
-              About JHUB Africa
-            </Link>
-            <Link
-              className="w-full bg-success sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              to="/learn-hub"
-            >
-              Learn Hub
-            </Link>
-          </div>
-
-          <div className="mt-6 lg:mt-12">
-            <span className="text-xs font-medium text-success uppercase dark:text-gray-200">
-              Investing in the digital future.
-            </span>
-
-            <div className="mt-4 flex gap-x-8">
-              JHUB Africa develops climate smart agricultural solutions and
-              digital trade.
-            </div>
-          </div>
-        </div>
-
-        <div className="lg:col-span-4 mt-10">
+    <Marquee
+      pauseOnHover
+      pauseOnClick
+      className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+    >
+      {partnershipLogos?.map((partnerLogo, i) => (
+        <a
+          key={i}
+          href={partnerLogo?.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <LazyLoadImage
             effect="blur"
-            className="w-full rounded-xl"
-            src={HeroImg}
-            alt="Image Description"
+            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            src={partnerLogo?.logo}
+            alt="Transistor"
+            width={178}
+            height={76}
           />
-        </div>
+        </a>
+      ))}
+    </Marquee>
+  );
+}
+
+function LandingHeroSection() {
+  return (
+    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="lg:col-span-3">
+        <h1 className="block text-3xl font-semibold sm:text-title-xxl dark:text-white">
+          Empowering Innovators: Welcome to the Creative Community of JHUB
+        </h1>
+        <p className="mt-3 text-lg text-secondary-blue dark:text-white">
+          We are a one-stop hub offering comprehensive array of digital
+          solutions for societal needs.
+        </p>
+
+        <Link
+          className="mt-4 w-full sm:w-54 bg-success py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-2xl border hover:border-success hover:bg-transparent hover:text-success text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          to="/about"
+        >
+          Get Started
+        </Link>
       </div>
+
+      <div className="mt-10">
+        <LazyLoadImage
+          effect="blur"
+          className="w-full rounded-xl"
+          src={HeroImg}
+          alt="Image Description"
+        />
+      </div>
+      <PartnershipLogos />
     </div>
   );
 }

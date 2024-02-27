@@ -9,7 +9,7 @@ const BaseLayout = () => {
         <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
         <NavBar />
         <main>
-          <div className="p-4 md:p-0">
+          <div>
             <Outlet/>
             <Footer />
           </div>
