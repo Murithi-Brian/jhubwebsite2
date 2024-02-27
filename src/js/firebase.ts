@@ -1,34 +1,37 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 // import { getAnalytics } from 'firebase/analytics';
-import { getStorage, ref } from 'firebase/storage';
+import {
+  getStorage,
+  // ref
+} from "firebase/storage";
 
 import {
   GoogleAuthProvider,
   getAuth,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
+  // signInWithPopup,
+  // signInWithEmailAndPassword,
+  // createUserWithEmailAndPassword,
+  // signOut
   sendPasswordResetEmail,
-  signOut
-} from 'firebase/auth';
+} from "firebase/auth";
 
 import {
   getFirestore,
-  query,
-  getDocs,
-  collection,
-  where,
-  addDoc
-} from 'firebase/firestore';
+  // query,
+  // getDocs,
+  // collection,
+  // where,
+  // addDoc
+} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyD5lpqXOjU0GD48qxduQh318xhsPnUnRkY',
-  authDomain: 'jhub-auth-d5236.firebaseapp.com',
-  projectId: 'jhub-auth-d5236',
-  storageBucket: 'jhub-auth-d5236.appspot.com',
-  messagingSenderId: '562732532978',
-  appId: '1:562732532978:web:2c519b48a5068f1998bc6b',
-  measurementId: 'G-884E4HJGHB'
+  apiKey: "AIzaSyD5lpqXOjU0GD48qxduQh318xhsPnUnRkY",
+  authDomain: "jhub-auth-d5236.firebaseapp.com",
+  projectId: "jhub-auth-d5236",
+  storageBucket: "jhub-auth-d5236.appspot.com",
+  messagingSenderId: "562732532978",
+  appId: "1:562732532978:web:2c519b48a5068f1998bc6b",
+  measurementId: "G-884E4HJGHB",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -43,7 +46,11 @@ export const passwordResetHandler = async (email: string): Promise<boolean> => {
     await sendPasswordResetEmail(auth, email);
     return true; // Password reset email sent successfully
   } catch (error) {
-    console.error('Error sending password reset email:', error.message);
+    if (error instanceof Error) {
+      console.error("Error sending password reset email:", error.message);
+    } else {
+      console.error("Error sending password reset email:", error);
+    }
     return false; // Failed to send password reset email
   }
 };
