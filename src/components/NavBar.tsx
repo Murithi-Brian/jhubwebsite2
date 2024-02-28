@@ -13,7 +13,7 @@ export const navTopLinks = [
     href: "/",
   },
   {
-    name: "About",
+    name: "About Us",
     href: "/about",
   },
   {
@@ -28,7 +28,6 @@ export const navTopLinks = [
     name: "Blog",
     href: "/blog",
   },
-
 ];
 
 // export const navBottomLinks = [
@@ -289,14 +288,18 @@ export default function NavBar() {
               <Link
                 to={link?.href}
                 key={i}
-                className="font-semibold text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
+                className={`font-semibold ${
+                  location.pathname === link?.href
+                    ? "text-success underline"
+                    : "text-main"
+                } hover:text-gray sm:py-6 dark:text-gray dark:hover:text-gray`}
               >
                 {link?.name}{" "}
               </Link>
             ))}
-            
+
             {/* Services */}
-            <ServicesTab/>
+            <ServicesTab />
 
             {/* <Link
               className="flex items-center gap-x-2 font-semibold text-gray-500 hover:text-blue-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500"

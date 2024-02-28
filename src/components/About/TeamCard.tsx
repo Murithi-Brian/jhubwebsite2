@@ -3,12 +3,6 @@ import {
   IconBrandLinkedin,
   IconBrandTwitter,
 } from "@tabler/icons-react";
-// import {
-//   ReactElement,
-//   JSXElementConstructor,
-//   ReactNode,
-//   ReactPortal,
-// } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const TeamCard = (TeamMember: {
@@ -20,7 +14,6 @@ const TeamCard = (TeamMember: {
   facebookLink: string;
   linkedInLink: string;
 }) => {
-  console.log(TeamMember);
   return (
     <div className="rounded my-4 shadow-md dark:bg-boxdark-2 dark:text-bodydark bg-white">
       <div className="mx-auto h-fit w-fit mt-4">
@@ -28,7 +21,7 @@ const TeamCard = (TeamMember: {
           effect="blur"
           src={TeamMember?.memberImageUrl}
           alt={TeamMember?.memberName}
-          className="object-cover h-72 w-90"
+          className="object-cover h-72 w-72  rounded-full"
           //   width={200}
           //   height={300}
         />
