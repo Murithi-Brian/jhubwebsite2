@@ -22,8 +22,6 @@ const TeamCard = (TeamMember: {
           src={TeamMember?.memberImageUrl}
           alt={TeamMember?.memberName}
           className="object-cover h-72 w-72  rounded-full"
-          //   width={200}
-          //   height={300}
         />
       </div>
       <div className="px-6 mt-16">
