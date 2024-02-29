@@ -7,6 +7,8 @@ import { Suspense } from "react";
 import Spinners from "../utils/Spinner";
 import Error10 from "../pages/NotFound";
 import About from "../pages/About/About";
+import Events from "../pages/Events/Events";
+import TrainingProgram from "../pages/Courses/Courses";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +29,22 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Spinners />}>
             <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/events",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <Events />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/courses",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <TrainingProgram />
           </Suspense>
         ),
       },
