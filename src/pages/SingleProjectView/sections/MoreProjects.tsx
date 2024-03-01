@@ -1,10 +1,10 @@
-const MoreProjectsCard = () => {
-  return (
-    <div>
-      <h2>More projects</h2>
-    </div>
-  );
-};
+// const MoreProjectsCard = () => {
+//   return (
+//     <div>
+//       <h2>More projects</h2>
+//     </div>
+//   );
+// };
 
 const MoreProjects = () => {
   return (
