@@ -9,6 +9,8 @@ import Error10 from "../pages/NotFound";
 import About from "../pages/About/About";
 import Events from "../pages/Events/Events";
 import TrainingProgram from "../pages/Courses/Courses";
+import Projects from "../pages/Projects/Projects";
+import SingleProjectView from "../pages/SingleProjectView/SingleProjectView";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +47,22 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Spinners />}>
             <TrainingProgram />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/projects",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <Projects />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/projects/:id",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <SingleProjectView />
           </Suspense>
         ),
       },
