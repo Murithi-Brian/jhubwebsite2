@@ -7,7 +7,7 @@ const ProjectDetails = () => {
     <section className="bg-secondary-background">
       <div className="mx-auto">
         {/* Challenge */}
-        <article className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
+        <article className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto px-4">
           <div className="space-y-4 w-full sm:w-auto max-w-xl">
             <h2 className="font-medium text-3xl">The Challenge</h2>
             <p>
@@ -30,7 +30,7 @@ const ProjectDetails = () => {
         </article>
 
         {/* What we did */}
-        <article className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
+        <article className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto px-4">
           <div className="space-y-4 w-full sm:w-auto max-w-xl">
             <h2 className="font-medium text-3xl">What we did</h2>
             <p>
@@ -69,7 +69,7 @@ const ProjectDetails = () => {
         </article>
 
         {/* The Solution */}
-        <article className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
+        <article className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto px-4">
           <div className="space-y-4 w-full sm:w-auto max-w-xl">
             <h2 className="font-medium text-3xl">The Solution</h2>
             <p>
