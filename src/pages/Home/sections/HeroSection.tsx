@@ -89,7 +89,7 @@ function PartnershipLogos() {
 
 function LandingHeroSection() {
   return (
-    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center z-0">
       <div className="lg:col-span-3">
         <h1 className="block text-3xl font-semibold sm:text-title-xxl dark:text-white">
           Empowering Innovators: Welcome to the Creative Community of JHUB

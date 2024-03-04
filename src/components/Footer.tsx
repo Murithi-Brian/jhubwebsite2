@@ -6,8 +6,12 @@ import {
   IconBrandLinkedin,
   IconBrandTiktok,
   IconBrandTwitter,
+  IconBrandYoutube,
 } from "@tabler/icons-react";
 // import DarkModeSwitcher from "./DarkModeSwitcher";
+// import Logo from "../assets/images/logo/jhub-logo1.png"
+// import Logo from "../assets/images/logo/jhub-log-white-svg.svg";
+import Logo from "../assets/images/logo/jhub-logo-new.svg";
 
 export default function Footer() {
   const { pathname } = useLocation();
@@ -31,36 +35,36 @@ export default function Footer() {
               to="/"
               aria-label="Brand"
             >
-              JHUB Africa
+              <img src={Logo} alt="JHUB Africa" />
             </Link>
           </div>
 
-          {/* Products */}
+          {/* Services */}
           <div>
             <h4 className="text-xs font-semibold uppercase text-white dark:text-gray-100">
-              Product
+              Services
             </h4>
 
             <div className="mt-3 grid space-y-3 text-sm">
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-pricing"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/consultancy"
                 >
-                  Pricing
+                  Consultancy
                 </Link>
               </p>
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/"
                 >
-                  Changelog
+                  Training and Courses
                 </Link>
               </p>
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/documentation"
                 >
                   Docs
@@ -78,15 +82,15 @@ export default function Footer() {
             <div className="mt-3 grid space-y-3 text-sm">
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/about-jhub"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/about"
                 >
                   About us
                 </Link>
               </p>
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/contact-us"
                 >
                   Contact Us
@@ -94,45 +98,21 @@ export default function Footer() {
               </p>
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-events"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/events"
                 >
                   Events
-                </Link>
-              </p>
-              <p>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-blog"
-                >
-                  Blog
                 </Link>
               </p>
 
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-admissions"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/admissions"
                 >
                   Innovations admission
                 </Link>{" "}
                 <span className="inline text-meta-3">— join us.</span>
-              </p>
-              <p>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-partnerships"
-                >
-                  Partnerships
-                </Link>
-              </p>
-              <p>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-newsroom"
-                >
-                  Newsroom
-                </Link>
               </p>
             </div>
           </div>
@@ -146,26 +126,27 @@ export default function Footer() {
             <div className="mt-3 grid space-y-3 text-sm">
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-community"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/blog"
                 >
-                  Community
+                  Blog
                 </Link>
               </p>
+
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/help-support"
-                >
-                  Help & Support
-                </Link>
-              </p>
-              <p>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-legal"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/legal"
                 >
                   Legal
+                </Link>
+              </p>
+              <p>
+                <Link
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/contact-us"
+                >
+                  Contact Us
                 </Link>
               </p>
             </div>
@@ -173,63 +154,40 @@ export default function Footer() {
 
           <div>
             <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Developers
+              Projects
             </h4>
 
             <div className="mt-3 grid space-y-3 text-sm">
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-ecosystem"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/projects"
                 >
-                  JHUB Africa Ecosystem
-                </Link>
-              </p>
-            </div>
-
-            <h4 className="mt-7 text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Industries
-            </h4>
-
-            <div className="mt-3 grid space-y-3 text-sm">
-              <p>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-agriculture-solutions"
-                >
-                  Agriculture
+                  Climate Smart Agriculture
                 </Link>
               </p>
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/jhub-energy-solutions"
                 >
-                  Energy
+                  Digital Twin Models
                 </Link>
               </p>
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/jhub-education-training"
                 >
-                  Education & Training
+                  Green Digital Innovation
                 </Link>
               </p>
               <p>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/jhub-innovation"
                 >
-                  Innovation Ecosystem
-                </Link>
-              </p>
-              <p>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-tech-sustainability"
-                >
-                  Technology & Sustainability
+                  Digital Trade
                 </Link>
               </p>
             </div>
@@ -241,13 +199,13 @@ export default function Footer() {
             <div className="flex justify-between items-center gap-x-3">
               <div className="space-x-4 text-sm ms-4">
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/jhub-terms"
                 >
                   Terms
                 </Link>
                 <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   to="/jhub-privacy"
                 >
                   Privacy
@@ -261,25 +219,50 @@ export default function Footer() {
               </p>
             </div>
 
+            {/* social media */}
             <div className="space-x-4 flex justify-center items-center">
               {/* <DarkModeSwitcher /> */}
-              <a href="https://twitter.com/JHUBAfrica" target="_blank">
+              <a
+                href="https://twitter.com/JHUBAfrica"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <IconBrandTwitter />{" "}
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCHN-H46LsYBXPGoOOsw4ffQ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconBrandYoutube />{" "}
               </a>
               <a
                 href="https://www.facebook.com/people/JHUB-Africa/61554202584585/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <IconBrandFacebook />
               </a>
-              <a href="https://www.linkedin.com/in/jhubafrica/" target="_blank">
+              <a
+                href="https://www.linkedin.com/company/jhubafrica/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <IconBrandLinkedin />
               </a>
 
-              <a href="https://www.tiktok.com/@jhubafrica" target="_blank">
+              <a
+                href="https://www.tiktok.com/@jhubafrica"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <IconBrandTiktok />
               </a>
-              <a href="https://www.instagram.com/jhubafrica/" target="_blank">
+              <a
+                href="https://www.instagram.com/jhubafrica/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <IconBrandInstagram />
               </a>
             </div>

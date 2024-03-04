@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import { IconChevronDown } from "@tabler/icons-react";
-import Logo from "../assets/images/logo/jhub-logo-new.svg"
+import Logo from "../assets/images/logo/jhub-logo-new.svg";
 import { classNames } from "../utils/classes";
 
 export const navTopLinks = [
@@ -55,144 +55,129 @@ export const navTopLinks = [
 
 function ServicesTab() {
   return (
-    <Menu as="div" className="relative inline-block text-left ml-18">
-      <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold text-success shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          Services
-          <IconChevronDown
-            className="-mr-1 h-5 w-5 text-gray-400"
-            aria-hidden="true"
-          />
-        </Menu.Button>
-      </div>
+    <div className="inline-block text-right">
+      <Menu as="div" className="relative text-left sm:ml-18 sm:mt-0 mt-6">
+        <div>
+          <Menu.Button className="inline-flex bg-white w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-success shadow-sm ring-1 ring-inset ring-success">
+            Services
+            <IconChevronDown className="-mr-1 h-5 w-5" aria-hidden="true" />
+          </Menu.Button>
+        </div>
 
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="absolute z-[100000] mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-main shadow-lg ring-1 ring-success ring-opacity-5 focus:outline-none">
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active
-                      ? 'bg-gray-100 text-gray-900'
-                      : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Training Programs
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active
-                      ? 'bg-gray-100 text-gray-900'
-                      : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Training & Workshops
-                </a>
-              )}
-            </Menu.Item>
-          </div>
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active
-                      ? 'bg-gray-100 text-gray-900'
-                      : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Mentorship
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active
-                      ? 'bg-gray-100 text-gray-900'
-                      : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Business Incubators
-                </a>
-              )}
-            </Menu.Item>
-          </div>
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active
-                      ? 'bg-gray-100 text-gray-900'
-                      : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Maximum Digital
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active
-                      ? 'bg-gray-100 text-gray-900'
-                      : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  AgriTech
-                </a>
-              )}
-            </Menu.Item>
-          </div>
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active
-                      ? 'bg-gray-100 text-gray-900'
-                      : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Propose a Service
-                </a>
-              )}
-            </Menu.Item>
-          </div>
-        </Menu.Items>
-      </Transition>
-    </Menu>
-  )
+        <Transition
+          as={Fragment}
+          enter="transition ease-out duration-100"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition ease-in duration-75"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95"
+        >
+          <Menu.Items className="absolute mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-success ring-opacity-5 focus:outline-none">
+            <div className="py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href="/"
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                  >
+                    Training Programs
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href="/"
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                  >
+                    Training & Workshops
+                  </a>
+                )}
+              </Menu.Item>
+            </div>
+            <div className="py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href="/"
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                  >
+                    Mentorship
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href="/"
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                  >
+                    Business Incubators
+                  </a>
+                )}
+              </Menu.Item>
+            </div>
+            <div className="py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href="/"
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                  >
+                    Maximum Digital
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href="/"
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                  >
+                    AgriTech
+                  </a>
+                )}
+              </Menu.Item>
+            </div>
+            <div className="py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href="/"
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "block px-4 py-2 text-sm"
+                    )}
+                  >
+                    Propose a Service
+                  </a>
+                )}
+              </Menu.Item>
+            </div>
+          </Menu.Items>
+        </Transition>
+      </Menu>
+    </div>
+  );
 }
 
 export default function NavBar() {
@@ -222,7 +207,7 @@ export default function NavBar() {
   });
 
   return isDashboardPage ? null : (
-    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-3 sm:py-0 dark:bg-slate-900">
+    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-[10000] w-full text-sm py-3 sm:py-0 dark:bg-slate-900">
       <nav
         className="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
         aria-label="Global"
@@ -299,7 +284,9 @@ export default function NavBar() {
             ))}
 
             {/* Services */}
-            <ServicesTab />
+            <div className="w-56 flex items-center">
+              <ServicesTab />
+            </div>
 
             {/* <Link
               className="flex items-center gap-x-2 font-semibold text-gray-500 hover:text-blue-600 sm:border-s sm:border-gray-300 sm:my-6 sm:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500"

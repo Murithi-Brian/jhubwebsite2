@@ -60,7 +60,7 @@ export default function FeatureList() {
     <section className="sm:mt-20 dark:bg-gray-900">
       <div className="py-8 px-4 sm:py-16 md:px-0">
         <div className="flex gap-20 items-center w-full">
-          <div className="hidden sm:contents">
+          <div className="hidden md:contents">
             <LazyLoadImage
               effect="blur"
               className="w-[564px] h-[964px]"
