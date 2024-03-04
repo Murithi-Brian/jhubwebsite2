@@ -7,7 +7,7 @@ import IreneKimani from "./irene-kimani.jpg";
 import JohnKinyuru from "./john-kinyuru.jpg";
 
 import CateMuraga from "./cate-muraga.jpg";
-import Noumbessy from "./noumbessy.jpeg";
+import Noumbessy from "./noumbessy.webp";
 import Dominique from "./kavuisya-dominique.png";
 import Kamochu from "./kamochu.png";
 import Priscilla from "./priscilla.png";
