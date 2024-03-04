@@ -96,7 +96,7 @@ function LandingHeroSection() {
         </h1>
         <p className="mt-3 text-lg text-secondary-blue dark:text-white">
           We are a one-stop hub offering comprehensive array of digital
-          solutions for societal needs.
+          solutions for societal needs
         </p>
 
         <Link
