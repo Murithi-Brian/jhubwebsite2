@@ -16,6 +16,8 @@ import RoseNganga from "./rose-nganga.png";
 import GeorgeGathoni from "./gathoni-george.jpeg";
 
 import WilsonGichuhi from "./wilson-gichuhi.jpg";
+import Sonia from "./sonia.jpg";
+import Derrick from "./obwatsa.jpg";
 
 export {
   GeorgeGathoni,
@@ -33,4 +35,6 @@ export {
   Priscilla,
   RoseNganga,
   WilsonGichuhi,
+  Sonia,
+  Derrick,
 };

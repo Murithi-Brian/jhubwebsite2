@@ -11,6 +11,7 @@ import Events from "../pages/Events/Events";
 import TrainingProgram from "../pages/Courses/Courses";
 import Projects from "../pages/Projects/Projects";
 import SingleProjectView from "../pages/SingleProjectView/SingleProjectView";
+import BlogDetails from "../pages/Blog/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +64,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Spinners />}>
             <SingleProjectView />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/blog/:id",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <BlogDetails />
           </Suspense>
         ),
       },

@@ -16,6 +16,8 @@ import {
   Priscilla,
   RoseNganga,
   WilsonGichuhi,
+  Sonia,
+  Derrick,
 } from "../../../assets/images/team";
 import TeamCard from "../../../components/About/TeamCard";
 
@@ -195,6 +197,24 @@ function Team() {
         twitterLink: `https://twitter.com/wilsonjugia/`,
         facebookLink: ``,
         linkedInLink: `https://www.linkedin.com/in/wilson-gichuhi`,
+      },
+      {
+        memberImageUrl: Sonia,
+        memberName: `Sonia Lomo`,
+        memberRole: `Software Engineer`,
+        description: `Sonia is a passionate Software Developer with a Computer Science degree. Her journey began with lines of code and blossomed into a love for creating elegant solutions. Armed with years of experience, she thrives on building robust applications and contributing to the open-source community. When she’s not immersed in code, you’ll find him spending time with his feline friends, indulging in his slight obsession with cats.`,
+        twitterLink: `https://twitter.com/sony_lomo`,
+        facebookLink: ``,
+        linkedInLink: `https://www.linkedin.com/in/sonia-lomo/`,
+      },
+      {
+        memberImageUrl: Derrick,
+        memberName: `Derrick Obwatsa`,
+        memberRole: `DevOps Engineer`,
+        description: `For over 5 years i have created both small and (considerably) large web applications using JavaScript frameworks and runtimes like NodeJS and VueJS. I am especially skilled in VueJS as a front-end frameworkthat I use to add comprehensive dynamism in my web applications.`,
+        twitterLink: ``,
+        facebookLink: ``,
+        linkedInLink: `https://www.linkedin.com/in/obwatsamd/`,
       },
     ],
   };

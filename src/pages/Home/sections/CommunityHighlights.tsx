@@ -1,7 +1,9 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import NetworkImg from "../../../assets/home/networkImg.jpg";
-import EventsImg from "../../../assets/home/eventsImg.png";
+// import NetworkImg from "../../../assets/home/networkImg.jpg";
+import NetworkImg from "../../../assets/home/Slo.jpg";
+
+import EventsImg from "../../../assets/home/jhub-team-002.jpg";
 import ResourcesImg from "../../../assets/home/resourcesImg.jpg";
 
 const CommunityHighlights = () => {
@@ -41,7 +43,12 @@ const CommunityHighlights = () => {
             </div>
           </div>
           <div>
-            <LazyLoadImage effect="blur" src={NetworkImg} alt="Network image" />
+            <LazyLoadImage
+              effect="blur"
+              src={NetworkImg}
+              alt="Network image"
+              className="w-[486px] rounded-lg"
+            />
           </div>
         </div>
       </div>
@@ -78,7 +85,12 @@ const CommunityHighlights = () => {
             </div>
           </div>
           <div>
-            <LazyLoadImage effect="blur" src={EventsImg} alt="Network image" />
+            <LazyLoadImage
+              effect="blur"
+              src={EventsImg}
+              alt="Network image"
+              className="w-[486px] rounded-lg"
+            />
           </div>
         </div>
       </div>

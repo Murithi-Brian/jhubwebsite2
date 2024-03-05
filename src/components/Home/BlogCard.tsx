@@ -6,7 +6,7 @@ export default function BlogCard(BlogPost: BlogPostProps) {
   return (
     <Link
       className="group border border-transparent hover:border-graydark flex justify-between flex-col h-full shadow-xl hover:shadow-none transition-all duration-300 rounded-lg dark:shadow-black/[.4] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-      to="/blog-post"
+      to="/blog/blog-post"
     >
       <div className="space-y-4">
         <div className="h-64 overflow-hidden mx-auto">
