@@ -1,23 +1,24 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import ProjectSample1 from "../../assets/projects/sampleProject1.jpg";
+import { ProjectItemType } from "../../types/project";
 
-const ProjectItem = () => {
+type ProjectItemPropsType = {
+  ProjectItemProps: ProjectItemType;
+};
+
+const ProjectItem = ({ ProjectItemProps }: ProjectItemPropsType) => {
   return (
     <article className="w-full px-4">
       <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
         <div className="space-y-4 w-full sm:w-auto max-w-xl">
           <p className="gap-6 text-success text-sm">
-            Creative Direction / Website Design / Icon Design
+            {ProjectItemProps.tags.map((tag, index) => (
+              <span key={index}>{tag} / </span>
+            ))}
           </p>
-          <h2 className="text-3xl">
-            PMR — online platform & responsive website design
-          </h2>
-          <p>
-            Less Doing, More Living was a conference about productivity and
-            entrepreneurship hosted by Ari Meisel, author of two bestselling
-            books: “The Art of Less Doing” and “The Replaceable Founder”.
-          </p>
+          <h2 className="text-3xl">{ProjectItemProps.title}</h2>
+          <p>{ProjectItemProps.description}</p>
 
           <div className="w-full sm:w-32">
             <Link
@@ -31,8 +32,8 @@ const ProjectItem = () => {
         <div className="mt-0 sm:mt-4">
           <LazyLoadImage
             effect="blur"
-            src={ProjectSample1}
-            alt="Project Image Sample"
+            src={ProjectItemProps.imageURL || ProjectSample1}
+            alt={ProjectItemProps.title}
           />
         </div>
       </div>
