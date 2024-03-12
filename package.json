@@ -1,6 +1,6 @@
 {
   "name": "jhub-africa",
-  "homepage":"https://jhubafrica.com/",
+  "homepage": "https://jhubafrica.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -24,6 +24,9 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@novu/notification-center": "^0.21.0",
+    "@portabletext/react": "^3.0.11",
+    "@sanity/client": "^6.15.3",
+    "@sanity/image-url": "^1.0.2",
     "@tabler/icons-react": "^2.42.0",
     "@types/node": "20.4.8",
     "apexcharts": "^3.41.1",

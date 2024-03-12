@@ -1,48 +1,74 @@
 import { Link } from "react-router-dom";
-import SmallScaleImg from "../../../assets/images/blogs/small-scale-farmers.avif";
-import DigitalSustainabilityImg from "../../../assets/images/blogs/digital-sustainability-blog.jpg";
-import JhubLogo from "../../../assets/images/logo/jhub-logo-new.svg";
 import BlogCard from "../../../components/Home/BlogCard";
-import {
-  GeorgeGathoni,
-  RehemaNdeda,
-  LawrenceNderu,
-} from "../../../assets/images/team";
-import { BlogPostProps } from "../../../types/home";
+import { BlogPostType } from "../../../types/home";
+import { useState, useEffect } from "react";
+import { sanityClient } from "../../../utils/sanityClient";
 
-const BlogList: BlogPostProps[] = [
-  {
-    href: "/blog-post",
-    imageSrc: SmallScaleImg,
-    imageAlt: "Small Scale Farmers",
-    title: "Announcing a Plan for Small Scale Farmers",
-    content:
-      "At Wake, our mission has always been focused on bringing openness.",
-    authorImageSrc: LawrenceNderu,
-    authorName: "Lawrence Nderu",
-  },
-  {
-    href: "/blog-post",
-    imageSrc: DigitalSustainabilityImg,
-    imageAlt: "Digital Tools for Sustainability",
-    title: "Taking Digital Tools for Sustainability",
-    content:
-      "Unlock Agribusiness potential with JHUB innovation. Pivot Your sector for innovation.",
-    authorImageSrc: RehemaNdeda,
-    authorName: "Dr Rehema Ndeda",
-  },
-  {
-    href: "/blog-post",
-    imageSrc: JhubLogo,
-    imageAlt: "JHUB Logo",
-    title: "Front accounts - let's work together",
-    content: "Are you an accountant? Are you a company formation advisor?",
-    authorImageSrc: GeorgeGathoni,
-    authorName: "George Gathoni",
-  },
-];
+// const BlogList: BlogPostProps[] = [
+//   {
+//     href: "/blog-post",
+//     imageSrc: SmallScaleImg,
+//     imageAlt: "Small Scale Farmers",
+//     title: "Announcing a Plan for Small Scale Farmers",
+//     content:
+//       "At Wake, our mission has always been focused on bringing openness.",
+//     authorImageSrc: LawrenceNderu,
+//     authorName: "Lawrence Nderu",
+//   },
+//   {
+//     href: "/blog-post",
+//     imageSrc: DigitalSustainabilityImg,
+//     imageAlt: "Digital Tools for Sustainability",
+//     title: "Taking Digital Tools for Sustainability",
+//     content:
+//       "Unlock Agribusiness potential with JHUB innovation. Pivot Your sector for innovation.",
+//     authorImageSrc: RehemaNdeda,
+//     authorName: "Dr Rehema Ndeda",
+//   },
+//   {
+//     href: "/blog-post",
+//     imageSrc: JhubLogo,
+//     imageAlt: "JHUB Logo",
+//     title: "Front accounts - let's work together",
+//     content: "Are you an accountant? Are you a company formation advisor?",
+//     authorImageSrc: GeorgeGathoni,
+//     authorName: "George Gathoni",
+//   },
+// ];
 
 export default function BlogSection() {
+  const [allPostsData, setAllPosts] = useState<BlogPostType[] | null>(null);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "post"  && "blog post" in categories[]->title] | order(publishedAt desc)[0..2]{
+            title,
+            slug,
+            mainImage{
+                asset->{
+                _id,
+                url
+                }
+              },
+            body,
+            "name": author->name,
+            "authorImage": author->image{
+                asset->{
+                _id,
+                url
+                }
+              },
+            subHeading
+          }`
+      )
+      .then((data: BlogPostType[]) => {
+        setAllPosts(data);
+      })
+      .catch(console.error);
+  }, []);
+
+
   return (
     <div className="max-w-[85rem] dark:bg-boxdark-2 dark:text-bodydark px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
@@ -52,9 +78,10 @@ export default function BlogSection() {
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {BlogList.map((blog) => (
-          <BlogCard key={crypto.randomUUID()} {...blog} />
-        ))}
+        {allPostsData &&
+          allPostsData.map((blog) => (
+            <BlogCard key={crypto.randomUUID()} BlogPost={blog} />
+          ))}
       </div>
 
       <div className="mt-12 text-center">
