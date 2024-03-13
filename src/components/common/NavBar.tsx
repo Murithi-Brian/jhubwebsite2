@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import { IconChevronDown } from "@tabler/icons-react";
-import Logo from "../assets/images/logo/jhub-logo-new.svg";
-import { classNames } from "../utils/classes";
+import Logo from "../../assets/images/logo/jhub-logo-new.svg";
+import { classNames } from "../../utils/classes";
 
 export const navTopLinks = [
   {
@@ -30,28 +30,16 @@ export const navTopLinks = [
   },
 ];
 
-// export const navBottomLinks = [
-//   {
-//     name: "Events",
-//     href: "/jhub-events",
-//   },
-//   {
-//     name: "Team Members",
-//     href: "/",
-//   },
-//   {
-//     name: "Training Programs",
-//     href: "/training-programs",
-//   },
-//   {
-//     name: "Technology & Sustainability",
-//     href: "/technology-sustainability",
-//   },
-//   {
-//     name: "Data Protection",
-//     href: "/data-protection-details",
-//   },
-// ];
+const serviceLinks = [
+  {
+    name: "Request a Consultation",
+    href: "/consultancy",
+  },
+  {
+    name: "Propose a Service",
+    href: "/contact-us",
+  },
+];
 
 function ServicesTab() {
   return (
@@ -74,105 +62,23 @@ function ServicesTab() {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-success ring-opacity-5 focus:outline-none">
-            <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="/"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Training Programs
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="/"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Training & Workshops
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="/"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Mentorship
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="/"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Business Incubators
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="/"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Maximum Digital
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="/"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    AgriTech
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="/"
-                    className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block px-4 py-2 text-sm"
-                    )}
-                  >
-                    Propose a Service
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
+            {serviceLinks.map((item, index) => (
+              <div key={index} className="py-1">
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href={item.href}
+                      className={classNames(
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                        "block px-4 py-2 text-sm"
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  )}
+                </Menu.Item>
+              </div>
+            ))}
           </Menu.Items>
         </Transition>
       </Menu>

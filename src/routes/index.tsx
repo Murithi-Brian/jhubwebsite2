@@ -1,23 +1,26 @@
 import {
   createBrowserRouter,
 } from "react-router-dom";
-import BaseLayout from "../components/BaseLayout";
+import BaseLayout from "../components/common/BaseLayout";
 import Home from "../pages/Home/Home";
 import { Suspense } from "react";
 import Spinners from "../components/common/Spinner";
-import Error10 from "../pages/NotFound";
+// import Error10 from "../pages/NotFound";
 import About from "../pages/About/About";
 import Events from "../pages/Events/Events";
 import TrainingProgram from "../pages/Courses/Courses";
 import Projects from "../pages/Projects/Projects";
 import SingleProjectView from "../pages/SingleProjectView/SingleProjectView";
-import BlogDetails from "../pages/Blog/Blog";
+import BlogPage from "../pages/Blog/Blog";
+import RequestConsultation from "../pages/Consultancy/Consultancy";
+import Career from "../pages/Career/Career";
+import SinglePost from "../pages/Blog/SinglePost";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <BaseLayout />,
-    errorElement: <Error10 />,
+    // errorElement: <Error10 />,
     children: [
       {
         path: "/",
@@ -68,10 +71,34 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/blog/:id",
+        path: "/blog",
         element: (
           <Suspense fallback={<Spinners />}>
-            <BlogDetails />
+            <BlogPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/blog/:slug",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <SinglePost />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/consultancy",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <RequestConsultation />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/career",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <Career />
           </Suspense>
         ),
       },

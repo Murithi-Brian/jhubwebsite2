@@ -27,6 +27,7 @@ export type BlogCardProps = {
     children: [];
     markDefs: [];
   }[];
+  publishedAt: string;
   name: string;
   authorImage: {
     asset: {

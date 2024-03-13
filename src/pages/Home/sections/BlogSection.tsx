@@ -68,7 +68,6 @@ export default function BlogSection() {
       .catch(console.error);
   }, []);
 
-
   return (
     <div className="max-w-[85rem] dark:bg-boxdark-2 dark:text-bodydark px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
@@ -87,7 +86,7 @@ export default function BlogSection() {
       <div className="mt-12 text-center">
         <Link
           className="py-3 border border-gray-200 dark:bg-boxdark-2 dark:text-bodydark px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          to="/blog-post"
+          to="/blog"
         >
           Read more
           <svg
