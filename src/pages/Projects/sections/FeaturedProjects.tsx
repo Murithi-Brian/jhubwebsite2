@@ -79,31 +79,31 @@ const FeaturedProjects = () => {
     ],
   });
 
-  const ProjectInfo = {
-    "Digital Twin Models": {
-      tagline: "Creating Realities in Digital Dimensions",
-      description:
-        "JHUB Africa stands at the forefront of digital replication, where our Digital Twin Models redefine the boundaries between the physical and digital realms. These models are not mere simulations; they are dynamic, real-time reflections that offer unprecedented insights and predictive analytics across industries. From urban planning to healthcare, manufacturing to energy management, our digital twins serve as powerful tools for decision-making, efficiency enhancement, and innovative problem-solving, driving progress and resilience in an ever-changing world.",
-    },
+  // const ProjectInfo = {
+  //   "Digital Twin Models": {
+  //     tagline: "Creating Realities in Digital Dimensions",
+  //     description:
+  //       "JHUB Africa stands at the forefront of digital replication, where our Digital Twin Models redefine the boundaries between the physical and digital realms. These models are not mere simulations; they are dynamic, real-time reflections that offer unprecedented insights and predictive analytics across industries. From urban planning to healthcare, manufacturing to energy management, our digital twins serve as powerful tools for decision-making, efficiency enhancement, and innovative problem-solving, driving progress and resilience in an ever-changing world.",
+  //   },
 
-    "Client Smart Agriculture": {
-      tagline: "Nurturing the Seeds of Tomorrow",
-      description:
-        "In our quest to revolutionize agriculture, we embrace sustainable, technology-driven solutions that promise a greener tomorrow. Climate Smart Agriculture at JHUB Africa is about more than just increasing crop yields; it's about pioneering practices that enhance resilience to climate change, optimize resource use, and support the well-being of local communities. By leveraging advanced analytics, IoT innovations, and smart farming techniques, we empower farmers to make informed decisions, ensuring food security and environmental sustainability for generations to come.",
-    },
+  //   "Client Smart Agriculture": {
+  //     tagline: "Nurturing the Seeds of Tomorrow",
+  //     description:
+  //       "In our quest to revolutionize agriculture, we embrace sustainable, technology-driven solutions that promise a greener tomorrow. Climate Smart Agriculture at JHUB Africa is about more than just increasing crop yields; it's about pioneering practices that enhance resilience to climate change, optimize resource use, and support the well-being of local communities. By leveraging advanced analytics, IoT innovations, and smart farming techniques, we empower farmers to make informed decisions, ensuring food security and environmental sustainability for generations to come.",
+  //   },
 
-    "Green Digital Innovation": {
-      tagline: "Technology in Harmony with Nature",
-      description:
-        "Our commitment to Green Digital Innovation is a testament to our belief that technology should work in harmony with nature. At JHUB Africa, we are dedicated to developing solutions that minimize the ecological footprint of digital technologies, promote energy efficiency, and encourage the sustainable use of resources. From eco-friendly computing practices to the development of green applications, our initiatives aim to foster an environmentally conscious digital ecosystem, ensuring that technological advancement contributes positively to the health of our planet.",
-    },
+  //   "Green Digital Innovation": {
+  //     tagline: "Technology in Harmony with Nature",
+  //     description:
+  //       "Our commitment to Green Digital Innovation is a testament to our belief that technology should work in harmony with nature. At JHUB Africa, we are dedicated to developing solutions that minimize the ecological footprint of digital technologies, promote energy efficiency, and encourage the sustainable use of resources. From eco-friendly computing practices to the development of green applications, our initiatives aim to foster an environmentally conscious digital ecosystem, ensuring that technological advancement contributes positively to the health of our planet.",
+  //   },
 
-    "Digital Trade": {
-      tagline: "Empowering Global Commerce through Innovation",
-      description:
-        "Recognizing the transformative potential of digitalization in trade, JHUB Africa is dedicated to dismantling barriers and creating new pathways for global commerce. Our focus on Digital Trade is about more than facilitating transactions; it's about building a more inclusive, efficient, and transparent trade ecosystem. By leveraging cutting-edge technologies such as blockchain, artificial intelligence, and e-commerce platforms, we empower African businesses to access international markets, driving economic growth and digital inclusion across the continent.",
-    },
-  };
+  //   "Digital Trade": {
+  //     tagline: "Empowering Global Commerce through Innovation",
+  //     description:
+  //       "Recognizing the transformative potential of digitalization in trade, JHUB Africa is dedicated to dismantling barriers and creating new pathways for global commerce. Our focus on Digital Trade is about more than facilitating transactions; it's about building a more inclusive, efficient, and transparent trade ecosystem. By leveraging cutting-edge technologies such as blockchain, artificial intelligence, and e-commerce platforms, we empower African businesses to access international markets, driving economic growth and digital inclusion across the continent.",
+  //   },
+  // };
 
   return (
     <section className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
