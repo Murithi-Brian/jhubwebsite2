@@ -137,7 +137,7 @@ const FeaturedProjects = () => {
                         We're on the look out for new innovations!
                       </p>
                       <p>
-                        <Link to="/contact-us">Contact us</Link> for more information.
+                        <Link to="/contact-us" className="underline hover:no-underline text-success">Contact us</Link> for more information.
                       </p>
                     </div>
                   )}
