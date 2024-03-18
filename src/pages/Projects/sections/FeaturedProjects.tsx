@@ -2,9 +2,11 @@ import ProjectItem from "../../../components/Projects/ProjectItem";
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { classNames } from "../../../utils/classes";
-import DLCMobile from "../../../assets/projects/dlcMobile.png";
 import DLCLaptop from "../../../assets/projects/dlcLaptop.png";
-import DLCTablet from "../../../assets/projects/dlcTablet.png";
+import MushroomFarm from "../../../assets/projects/mushroomFarm.png";
+import SearchingGif from "../../../assets/projects/searching.gif";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 
 const FeaturedProjects = () => {
   const [projects] = useState({
@@ -12,71 +14,29 @@ const FeaturedProjects = () => {
       {
         tags: [
           "Data Protection Act",
-          "Web Application",
+          "Progressive Web Application",
           "Large Language Model",
         ],
         title: "Data Law Companion",
         description:
-          "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
-        href: "/data-law-companion",
-        imageURL: DLCTablet,
+          "DLC is a comprehensive platform designed to help users navigate the complexities of data protection laws in Kenya, Uganda, and Rwanda. It features a dynamic website with a Large Language Model (LLM)-powered Q&A system, a summarization function, and an interactive chatbot, all aimed at providing precise, region-specific information and fostering efficient user engagement.",
+        href: "https://datalawcompanion.org/",
+        imageURL: DLCLaptop,
       },
     ],
-    "Client Smart Agriculture": [
+    "Climate Smart Agriculture": [
       {
-        tags: ["Creative Direction", "UI/UX", "Website Design", "Icon Design"],
-        title: "PMR — online platform & responsive website design",
+        tags: ["Smart Farm"],
+        title: "Green Mushroom Smartfarm and Spawns",
         description:
-          "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
-        href: "/data-law-companion",
-        imageURL: DLCTablet,
-      },
-      {
-        tags: ["Creative Direction", "UI/UX", "Website Design", "Icon Design"],
-        title: "PMR — online platform & responsive website design",
-        description:
-          "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
-        href: "/data-law-companion",
-        imageURL: DLCMobile,
-      },
-      {
-        tags: ["Creative Direction", "UI/UX", "Website Design", "Icon Design"],
-        title: "PMR — online platform & responsive website design",
-        description:
-          "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
-        href: "/data-law-companion",
-        imageURL: DLCLaptop,
+          "Mushroom cultivation to reduce deforestation and create alternate forest income.",
+        href: "/green-mushroom-smartfarm-and-spawns",
+        imageURL: MushroomFarm,
       },
     ],
 
-    "Green Digital Innovation": [
-      {
-        tags: ["Creative Direction", "UI/UX", "Website Design", "Icon Design"],
-        title: "PMR — online platform & responsive website design",
-        description:
-          "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
-        href: "/data-law-companion",
-        imageURL: DLCMobile,
-      },
-      {
-        tags: ["Creative Direction", "UI/UX", "Website Design", "Icon Design"],
-        title: "PMR — online platform & responsive website design",
-        description:
-          "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
-        href: "/data-law-companion",
-        imageURL: DLCLaptop,
-      },
-    ],
-    "Digital Trade": [
-      {
-        tags: ["Creative Direction", "UI/UX", "Website Design", "Icon Design"],
-        title: "PMR — online platform & responsive website design",
-        description:
-          "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
-        href: "/data-law-companion",
-        imageURL: DLCMobile,
-      },
-    ],
+    "Green Digital Innovation": [],
+    "Digital Trade": [],
   });
 
   // const ProjectInfo = {
@@ -157,13 +117,30 @@ const FeaturedProjects = () => {
                     "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
                   )}
                 >
-                  <ul className="space-y-5">
-                    {projectItems.map((projectItem) => (
-                      <li key={crypto.randomUUID()}>
-                        <ProjectItem ProjectItemProps={projectItem} />
-                      </li>
-                    ))}
-                  </ul>
+                  {projectItems.length > 0 ? (
+                    <ul className="space-y-5">
+                      {projectItems.map((projectItem) => (
+                        <li key={crypto.randomUUID()}>
+                          <ProjectItem ProjectItemProps={projectItem} />
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className="flex flex-col gap-4 items-center justify-center py-20">
+                      <LazyLoadImage
+                        effect="blur"
+                        src={SearchingGif}
+                        alt="Searching gif by ILLI Design on Dribbble"
+                        width={450}
+                      />
+                      <p className="text-center text-main font-semibold text-xl">
+                        We're on the look out for new innovations!
+                      </p>
+                      <p>
+                        <Link to="/contact-us">Contact us</Link> for more information.
+                      </p>
+                    </div>
+                  )}
                 </Tab.Panel>
               </>
             ))}

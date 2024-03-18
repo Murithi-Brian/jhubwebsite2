@@ -12,10 +12,11 @@ import TrainingProgram from "../pages/Courses/Courses";
 import Projects from "../pages/Projects/Projects";
 import SingleProjectView from "../pages/SingleProjectView/SingleProjectView";
 import BlogPage from "../pages/Blog/Blog";
-import RequestConsultation from "../pages/Consultancy/Consultancy";
+import RequestConsultation from "../pages/Consultancy";
 import Career from "../pages/Career/Career";
 import SinglePost from "../pages/Blog/SinglePost";
-
+import ContactUs from "../pages/ContactUs";
+// info.jhub@jkuat.ac.ke
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -99,6 +100,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Spinners />}>
             <Career />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact-us",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <ContactUs />
           </Suspense>
         ),
       },

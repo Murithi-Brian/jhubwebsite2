@@ -20,14 +20,14 @@ const ProjectItem = ({ ProjectItemProps }: ProjectItemPropsType) => {
           <h2 className="text-3xl">{ProjectItemProps.title}</h2>
           <p>{ProjectItemProps.description}</p>
 
-          <div className="w-full sm:w-32">
+          {/* <div className="w-full sm:w-32">
             <Link
               className="mt-4 w-full sm:w-54 bg-success py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-2xl border hover:border-success hover:bg-transparent hover:text-success text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               to="/projects/datalawcompanion"
             >
               View Project
             </Link>
-          </div>
+          </div> */}
         </div>
         <div className="mt-0 sm:mt-4">
           <LazyLoadImage
