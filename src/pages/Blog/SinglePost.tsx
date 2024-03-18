@@ -25,7 +25,6 @@ const SinglePost = () => {
   );
 
   const { slug } = useParams();
-  console.log("slug stuff: ", slug);
 
   useEffect(() => {
     sanityClient
@@ -63,7 +62,7 @@ const SinglePost = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "post"  && "blog post" in categories[]->title] | order(publishedAt desc)[0..2]{
+        `*[_type == "post"  && ("blog post" in categories[]->title || "newsletter" in categories[]->title)] | order(publishedAt desc)[0..2]{
             title,
             slug,
             mainImage{
@@ -92,7 +91,7 @@ const SinglePost = () => {
               <div className="space-y-5 lg:space-y-8">
                 <Link
                   className="inline-flex items-center gap-x-1.5 text-sm text-gray-600 decoration-2 hover:underline dark:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/"
+                  to="/blog"
                 >
                   <IconChevronLeft />
                   Back to Blog

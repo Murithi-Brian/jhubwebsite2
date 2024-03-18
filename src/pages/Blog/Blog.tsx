@@ -9,7 +9,7 @@ export default function BlogPage() {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "post"  && "blog post" in categories[]->title] | order(publishedAt desc)[0..2]{
+        `*[_type == "post" && ("blog post" in categories[]->title || "newsletter" in categories[]->title)]| order(publishedAt desc){
             title,
             slug,
             mainImage{
@@ -17,7 +17,7 @@ export default function BlogPage() {
                 _id,
                 url
                 }
-              },
+            },
             body,
             "name": author->name,
             "authorImage": author->image{
@@ -25,9 +25,9 @@ export default function BlogPage() {
                 _id,
                 url
                 }
-              },
+            },
             subHeading
-          }`
+        }`
       )
       .then((data: BlogPostType[]) => {
         setAllPosts(data);

@@ -126,7 +126,10 @@ const FeaturedProjects = () => {
                       ))}
                     </ul>
                   ) : (
-                    <div className="flex flex-col gap-4 items-center justify-center py-20">
+                    <div
+                      className="flex flex-col gap-4 items-center justify-center py-20"
+                      key={crypto.randomUUID()}
+                    >
                       <LazyLoadImage
                         effect="blur"
                         src={SearchingGif}
@@ -137,7 +140,13 @@ const FeaturedProjects = () => {
                         We're on the look out for new innovations!
                       </p>
                       <p>
-                        <Link to="/contact-us" className="underline hover:no-underline text-success">Contact us</Link> for more information.
+                        <Link
+                          to="/contact-us"
+                          className="underline hover:no-underline text-success"
+                        >
+                          Contact us
+                        </Link>{" "}
+                        for more information.
                       </p>
                     </div>
                   )}

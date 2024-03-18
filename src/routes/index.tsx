@@ -5,7 +5,7 @@ import BaseLayout from "../components/common/BaseLayout";
 import Home from "../pages/Home/Home";
 import { Suspense } from "react";
 import Spinners from "../components/common/Spinner";
-// import Error10 from "../pages/NotFound";
+import Error10 from "../pages/NotFound";
 import About from "../pages/About/About";
 import Events from "../pages/Events/Events";
 import TrainingProgram from "../pages/Courses/Courses";
@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <BaseLayout />,
-    // errorElement: <Error10 />,
+    errorElement: <Error10 />,
     children: [
       {
         path: "/",
