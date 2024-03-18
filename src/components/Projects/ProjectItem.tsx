@@ -1,5 +1,5 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ProjectSample1 from "../../assets/projects/sampleProject1.jpg";
 import { ProjectItemType } from "../../types/project";
 
