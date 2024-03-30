@@ -448,6 +448,7 @@ export default function TrainingProgram() {
       <h3 className="text-title-xl sm:text-2xl font-semibold my-8">
         All Courses
       </h3>
+     
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {courses.map(
           ({

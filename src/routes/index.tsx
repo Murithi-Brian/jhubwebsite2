@@ -16,6 +16,7 @@ import RequestConsultation from "../pages/Consultancy";
 import Career from "../pages/Career/Career";
 import SinglePost from "../pages/Blog/SinglePost";
 import ContactUs from "../pages/ContactUs";
+import Documentation from "../pages/Documentation";
 // info.jhub@jkuat.ac.ke
 export const router = createBrowserRouter([
   {
@@ -111,6 +112,14 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/documentation",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <Documentation />
+          </Suspense>
+        ),
+      }
     ],
   },
 ]);

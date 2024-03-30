@@ -37,6 +37,7 @@ const FeaturedProjects = () => {
 
     "Green Digital Innovation": [],
     "Digital Trade": [],
+    "Digital Transformation": [],
   });
 
   // const ProjectInfo = {

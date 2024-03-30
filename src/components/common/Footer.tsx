@@ -49,6 +49,7 @@ const resourceLinks = [
   { name: "Blog", href: "/blog" },
   { name: "Legal", href: "/legal" },
   { name: "Contact Us", href: "/contact-us" },
+  { name: "Documentation", href: "/documentation" },
 ];
 
 const projectLinks = [
@@ -56,6 +57,7 @@ const projectLinks = [
   { name: "Digital Twin Models", href: "/projects" },
   { name: "Green Digital Innovation", href: "/projects" },
   { name: "Digital Trade", href: "/projects" },
+  { name: "Digital Transformation", href: "/projects" },
 ];
 
 export default function Footer() {
