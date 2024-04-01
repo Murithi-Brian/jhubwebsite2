@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { sanityClient } from "../../utils/sanityClient";
-// import { Document, Page } from "react-pdf";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
 type CareerType = {
   title: string;
@@ -15,18 +15,12 @@ type CareerType = {
 };
 
 const Career = () => {
-  const [CareerData, setCareerData] = useState<CareerType | null>(null);
-  // const [numPages, setNumPages] = useState(null);
-  // const [pageNumber, setPageNumber] = useState(1);
-
-  // const onDocumentLoadSuccess = ({ numPages }) => {
-  //   setNumPages(numPages);
-  // };
+  const [CareerData, setCareerData] = useState<CareerType[]>([]);
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[slug.current == "request-for-expressions-of-interest-consulting-services-individual-selection"]{
+        `*[_type == "career"]{
           title,
           slug,
           body{
@@ -39,45 +33,44 @@ const Career = () => {
         }`
       )
       .then((data) => {
-        setCareerData(data[0]);
-        console.log("single post", data[0].body.asset.url);
+        setCareerData(data);
+        console.log("single post", data);
       })
       .catch(console.error);
   }, []);
 
   return (
-    <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
+    <div className="">
       <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
         <h1 className="block text-3xl font-semibold sm:text-title-xxl dark:text-white">
           Job Opportunities
         </h1>
         <p className="mt-3 text-lg text-secondary-blue dark:text-white">
-          Join our vision today!
+          We're Hiring!
         </p>
       </div>
-      {CareerData && (
-        <div className="w-full mx-auto py-10">
-          <h2 className="text-2xl text-center mb-4">{CareerData.title}</h2>
-          <iframe
-            title={CareerData.title}
-            src={CareerData.body.asset.url}
-            width="100%"
-            height="700px"
-            frameBorder="0"
-          ></iframe>
-          {/* <Document
-            // file={CareerData.body.asset.url}
-            // file="https://cdn.sanity.io/files/mmlot90j/production/6be7989598dafd7478743f1769c91b393084d57a.pdf"
-            file="../../docs/vacancy1.pdf"
-            onLoadSuccess={onDocumentLoadSuccess}
-          >
-            <Page pageNumber={pageNumber} />
-          </Document>
-          <p>
-            Page {pageNumber} of {numPages}
-          </p> */}
-        </div>
-      )}
+
+      <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto py-10 bg-secondary-background">
+        {CareerData &&
+          CareerData.map((career) => (
+            <div
+              key={career.slug}
+              className="bg-white py-10 max-w-6xl mb-4 px-10 mx-auto rounded flex justify-between items-center"
+            >
+              <p className="text-xl font-semibold capitalize mb-4 w-1/2">
+                {career.title}
+              </p>
+              <a
+                className="bg-primary text-white border hover:border-primary hover:text-primary hover:bg-transparent font-bold gap-3 px-4 py-4 rounded-lg flex"
+                href={career.body.asset.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Job Listing <IconArrowUpRight />
+              </a>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

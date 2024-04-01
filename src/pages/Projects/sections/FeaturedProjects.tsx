@@ -5,12 +5,13 @@ import { classNames } from "../../../utils/classes";
 import DLCLaptop from "../../../assets/projects/dlcLaptop.png";
 import MushroomFarm from "../../../assets/projects/mushroomFarm.png";
 import SearchingGif from "../../../assets/projects/searching.gif";
+import AgroManna from "../../../assets/projects/agromanna.jpeg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 const FeaturedProjects = () => {
   const [projects] = useState({
-    "Digital Twin Models": [
+    "Digital Transformation": [
       {
         tags: [
           "Data Protection Act",
@@ -30,14 +31,22 @@ const FeaturedProjects = () => {
         title: "Green Mushroom Smartfarm and Spawns",
         description:
           "Mushroom cultivation to reduce deforestation and create alternate forest income.",
-        href: "/green-mushroom-smartfarm-and-spawns",
+        href: "",
         imageURL: MushroomFarm,
       },
     ],
-
-    "Green Digital Innovation": [],
+    "Green Digital Innovation": [
+      {
+        tags: ["Solar Energy", "Automated Irrigation System",],
+        title: "Agro Manna ",
+        description:
+          "Agro Manna is a sensor-based automated irrigation system for effective use of water in semi-arid areas. It aims at increasing the acreage of farms. Powered by Solar energy",
+        href: "https://agromanna.jhubafrica.com/",
+        imageURL: AgroManna,
+      },
+    ],
+    "Digital Twin Models": [],
     "Digital Trade": [],
-    "Digital Transformation": [],
   });
 
   // const ProjectInfo = {
@@ -80,11 +89,11 @@ const FeaturedProjects = () => {
       </div>
 
       <div className="">
-        <h2 className="mt-12 mb-4 text-xl font-medium text-success dark:text-white text-center">
+        <h2 className="mt-12 mb-4 text-2xl font-medium text-success dark:text-white text-center">
           Projects
         </h2>
         <Tab.Group>
-          <Tab.List className="flex gap-8">
+          <Tab.List className="flex gap-8 overflow-x-auto">
             {Object.keys(projects).map((category) => (
               <Tab
                 key={category}

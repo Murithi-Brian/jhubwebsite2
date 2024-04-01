@@ -51,8 +51,8 @@ const Documentation: React.FC = () => {
             <img src={PDFIcon} alt="PDF Icon" className="h-16 w-16" />
             <div className="space-y-4">
               <a
-                href={file.path}
                 className="flex items-center gap-1 text-xl font-bold text-main mb-4 hover:underline"
+                href={file.path}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -67,7 +67,7 @@ const Documentation: React.FC = () => {
           </div>
           <a
             href={file.path}
-            className="w-full sm:w-54 bg-success py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-2xl border border-success hover:bg-transparent hover:text-success text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+            className="w-full sm:w-54 bg-primary py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-primary hover:bg-transparent hover:text-primary text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             download
           >
             Download <IconDownload />
