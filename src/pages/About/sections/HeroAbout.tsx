@@ -1,5 +1,5 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import BannerImg from "../../../assets/about/aboutBanner.jpg";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+// import BannerImg from "../../../assets/about/aboutBanner.jpg";
 import YouTube, { YouTubeProps } from "react-youtube";
 
 const HeroAbout = () => {
