@@ -55,9 +55,9 @@ const Career = () => {
           CareerData.map((career) => (
             <div
               key={career.slug}
-              className="bg-white py-10 max-w-6xl mb-4 px-10 mx-auto rounded flex justify-between items-center"
+              className="bg-white py-10 max-w-6xl mb-4 px-10 mx-auto rounded flex sm:flex-row flex-col justify-between sm:items-center"
             >
-              <p className="text-xl font-semibold capitalize mb-4 w-1/2">
+              <p className="text-xl font-semibold capitalize mb-4 sm:w-1/2">
                 {career.title}
               </p>
               <a

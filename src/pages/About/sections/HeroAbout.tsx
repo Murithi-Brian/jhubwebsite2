@@ -1,9 +1,24 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import BannerImg from "../../../assets/about/aboutBanner.jpg";
+import YouTube, { YouTubeProps } from "react-youtube";
 
 const HeroAbout = () => {
+  const onPlayerReady: YouTubeProps["onReady"] = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts: YouTubeProps["opts"] = {
+    height: "576",
+    width: "1024",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
   return (
-    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
       <div>
         <h1 className="block text-3xl font-semibold sm:text-title-xxl dark:text-white">
           Discover Our Mission: Empowering Change Through Innovation and
@@ -17,11 +32,14 @@ const HeroAbout = () => {
           Who we are
         </h2>
         <h3 className="sm:text-title-xl text-3xl font-semibold mb-4 dark:text-white">
-          From JKIAN to JHUB Africa
+          We Provide Impactful Digital Solutions For Enterprises
         </h3>
       </div>
 
-      <div className="mt-10 sm:relative flex flex-col sm:flex-row items-center">
+      <div className="flex justify-center overflow-x-auto">
+        <YouTube videoId="-jvCgrBD5LI" opts={opts} onReady={onPlayerReady} className="rounded" />
+      </div>
+      {/* <div className="mt-10 sm:relative flex flex-col sm:flex-row items-center">
         <LazyLoadImage
           effect="blur"
           className="w-full rounded-lg"
@@ -39,7 +57,7 @@ const HeroAbout = () => {
             for small and medium-scale farmers, traders, and enterprises.{" "}
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
