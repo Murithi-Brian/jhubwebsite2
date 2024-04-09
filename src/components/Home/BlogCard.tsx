@@ -41,7 +41,7 @@ export default function BlogCard({ BlogPost }: BlogCardPropsType) {
         />
         <div>
           <h5 className="text-sm text-gray-800 dark:text-gray-200">
-            By {BlogPost.name}
+            {BlogPost.name}
           </h5>
         </div>
       </div>

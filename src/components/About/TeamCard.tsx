@@ -38,20 +38,32 @@ const TeamCard = (TeamMember: {
         </div>
         <div className="w-full flex gap-4 py-5">
           {TeamMember?.twitterLink !== "" && (
-            <a href={TeamMember?.twitterLink}>
+            <a
+              href={TeamMember?.twitterLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="text-[#71839B]">
                 <IconBrandTwitter />
               </div>
             </a>
           )}
           {TeamMember?.facebookLink !== "" && (
-            <a href={TeamMember?.facebookLink}>
+            <a
+              href={TeamMember?.facebookLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="text-[#71839B]">
                 <IconBrandFacebook />
               </div>
             </a>
           )}
-          <a href={TeamMember?.linkedInLink}>
+          <a
+            href={TeamMember?.linkedInLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="text-[#71839B]">
               <IconBrandLinkedin />
             </div>

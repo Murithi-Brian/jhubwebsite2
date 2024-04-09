@@ -98,7 +98,7 @@ function Team() {
         description: `Dr John Kinyuru is an esteemed Food and Nutrition Scientist with great leadership and project management capabilities. Director of research and innovation at Jomo Kenyatta University of Agriculture and Technology(JKUAT), and researcher in Agriculture, food, and nutrition. A food systems and nutrition-sensitive agriculture expert, he is typically the insect hunter(specialist of edible insects), passionate about food security through research and implementation. Dr John Kinyuru is a key member of the JHUB Africa project whose role will transform the food and nutrition ecosystem.`,
         twitterLink: `https://twitter.com/jkinyuru`,
         facebookLink: ``,
-        linkedInLink: `https://ke.linkedin.com/in/dr-john-n-kinyuru-phd-rns-7a797120`,
+        linkedInLink: "https://www.linkedin.com/in/dr-john-kinyuru-phd-rns-7a797120/",
       },
     ],
     "ADVISORY BOARD": [

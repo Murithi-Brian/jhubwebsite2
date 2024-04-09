@@ -1,17 +1,18 @@
 import { PortableTextComponents } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../../utils/sanityClient";
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 const builder = imageUrlBuilder(sanityClient);
-export function urlFor(source: {
+
+export const urlFor = (source: {
   asset: {
     _id: string;
     url: string;
   };
-}) {
+}) => {
   return builder.image(source);
-}
+};
 
 export const components: PortableTextComponents = {
   marks: {

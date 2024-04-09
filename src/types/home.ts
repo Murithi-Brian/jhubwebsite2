@@ -51,6 +51,9 @@ export type BlogPostType = {
       url: string;
     };
   };
+  categories: {
+    title: string;
+  }[];
   body?: {
     _type: string;
     _key: string;
