@@ -6,6 +6,8 @@ import DLCLaptop from "../../../assets/projects/dlcLaptop.png";
 import MushroomFarm from "../../../assets/projects/mushroomFarm.png";
 import SearchingGif from "../../../assets/projects/searching.gif";
 import AgroManna from "../../../assets/projects/agromanna.jpeg";
+import IdCoder from "../../../assets/projects/idCoder.png";
+import Tuokoleane from "../../../assets/projects/tuokoleane.jpeg"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
@@ -37,7 +39,7 @@ const FeaturedProjects = () => {
     ],
     "Green Digital Innovation": [
       {
-        tags: ["Solar Energy", "Automated Irrigation System",],
+        tags: ["Solar Energy", "Automated Irrigation System"],
         title: "Agro Manna ",
         description:
           "Agro Manna is a sensor-based automated irrigation system for effective use of water in semi-arid areas. It aims at increasing the acreage of farms. Powered by Solar energy",
@@ -46,7 +48,24 @@ const FeaturedProjects = () => {
       },
     ],
     "Digital Twin Models": [],
-    "Digital Trade": [],
+    "Digital Trade": [
+      {
+        tags: ["Crowdfunding", "P2P Fundraising", "Donation Processing"],
+        title: "Tuokoleane",
+        description:
+          "We are an organization dedicated to helping people hold successful online fundraising events. We have extensive experience in organizing and executing online fundraising events for a variety of causes, and we understand the challenges and opportunities associated with them. Our team of professionals is committed to helping you make your event a success. Our goal is to provide you with the tools and resources necessary to make your fundraiser a success. We look forward to helping you reach your fundraising goals!",
+        href: "https://tuokoleane.jhubafrica.com/",
+        imageURL: Tuokoleane,
+      },
+      {
+        tags: ["Artificial Intelligence", "Collaborative Innovation"],
+        title: "Research and Innovators Ecosystem",
+        description:
+          "The Research and Innovators Ecosystem is an inclusive platform that facilitate collaboration and resource sharing among researchers, scholars, students, and innovators worldwide. The platform has unique AI-powered partner recommendation that help researchers and innovators acquires partners to collaborate with in a project.",
+        href: "https://id-coders.jhubafrica.com/",
+        imageURL: IdCoder,
+      },
+    ],
   });
 
   return (

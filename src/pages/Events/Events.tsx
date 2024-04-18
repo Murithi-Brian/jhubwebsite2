@@ -2,8 +2,14 @@ import { useState } from "react";
 import { EventItem } from "../../components/Events/EventCard";
 import { PastEvents, UpcomingEvent } from "../../types/events";
 
-
 const pastEvents: PastEvents[] = [
+  {
+    eventName: "Unlocking a Thrivable Future for Humanity",
+    date: "22nd Feb 2024",
+    location: "Online",
+    description: `We are thrilled to welcome Dr. Mariana Bozesan to our JHUB speaker series. As a distinguished integral investor, pioneering AI expert, and serial tech entrepreneur, Dr. Bozesan possesses a unique vision: to harness the power of exponentially growing technologies not just to decarbonize the global economy, but also to initiate a new era of prosperity that operates within the confines of our planet's boundaries. Dr. Bozesan will be the speaker for an online webinar moderated by Dr. Lawrence Nderu.`,
+    isOnLeft: false,
+  },
   {
     eventName: "JHUB Board Meeting",
     date: "11th Dec 2023",
@@ -86,17 +92,7 @@ const pastEvents: PastEvents[] = [
   // }
 ];
 
-const upcomingEvents: UpcomingEvent[] = [
-  {
-    eventName: "Unlocking a Thrivable Future for Humanity",
-    date: "22nd Feb 2024",
-    location: "Online",
-    description: `We are thrilled to welcome Dr. Mariana Bozesan to our JHUB speaker series. As a distinguished integral investor, pioneering AI expert, and serial tech entrepreneur, Dr. Bozesan possesses a unique vision: to harness the power of exponentially growing technologies not just to decarbonize the global economy, but also to initiate a new era of prosperity that operates within the confines of our planet's boundaries. Dr. Bozesan will be the speaker for an online webinar moderated by Dr. Lawrence Nderu.`,
-    isOnLeft: true,
-    register: "https://forms.gle/RTznUPLxCjqnnKgp8",
-    registerAsSpeaker: false,
-  },
-];
+const upcomingEvents: UpcomingEvent[] = [];
 
 const Events = () => {
   const [currentView, setCurrentView] = useState("upcoming");
