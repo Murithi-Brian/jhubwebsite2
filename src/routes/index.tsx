@@ -17,6 +17,7 @@ import Career from "../pages/Career/Career";
 import SinglePost from "../pages/Blog/SinglePost";
 import ContactUs from "../pages/ContactUs";
 import Documentation from "../pages/Documentation";
+import FAQ from "../pages/Home/sections/FAQ";
 // info.jhub@jkuat.ac.ke
 export const router = createBrowserRouter([
   {
@@ -119,7 +120,15 @@ export const router = createBrowserRouter([
             <Documentation />
           </Suspense>
         ),
-      }
+      },
+      {
+        path: "/faq",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <FAQ />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);

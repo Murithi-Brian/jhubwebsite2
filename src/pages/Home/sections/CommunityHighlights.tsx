@@ -8,16 +8,16 @@ import ResourcesImg from "../../../assets/home/resourcesImg.jpg";
 
 const CommunityHighlights = () => {
   return (
-    <div className="my-8 w-full mx-auto">
+    <div className="mt-8 w-full mx-auto">
       <h2 className="text-3xl text-center font-semibold text-gray-800 dark:text-white mb-4 sm:ml-8 px-4">
         Community Highlights
       </h2>
 
       {/* newtwork */}
-      <div className="w-full bg-secondary-background px-4">
+      <div className="w-full bg-main px-4 text-whiter">
         <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
           <div className="space-y-4 w-full sm:w-auto">
-            <h3 className="text-3xl">Network</h3>
+            <h3 className="text-3xl text-whiter">Network</h3>
             <p>We serve the technology community in several ways</p>
             <ul className="space-y-2">
               <li key={crypto.randomUUID()} className="flex items-center">
@@ -38,7 +38,7 @@ const CommunityHighlights = () => {
                 to="/events"
                 className="block text-center border border-success text-success rounded-2xl p-3 h-12 sm:w-32 hover:bg-success hover:text-white"
               >
-                Explore
+                View Events
               </Link>
             </div>
           </div>
@@ -54,7 +54,7 @@ const CommunityHighlights = () => {
       </div>
 
       {/* Events */}
-      <div className="w-full bg-main px-4">
+      {/* <div className="w-full bg-main px-4">
         <div className="flex sm:flex-row-reverse flex-col gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
           <div className="space-y-4 text-whiter w-full sm:w-auto">
             <h3 className="text-3xl text-whiter">Events</h3>
@@ -93,10 +93,10 @@ const CommunityHighlights = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* resources library */}
-      <div className="w-full bg-secondary-background px-4">
+      {/* <div className="w-full bg-secondary-background px-4">
         <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
           <div className="space-y-4 mb-4 sm:mb-0 w-full sm:w-auto">
             <h3 className="text-3xl">Resources Library</h3>
@@ -132,7 +132,7 @@ const CommunityHighlights = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

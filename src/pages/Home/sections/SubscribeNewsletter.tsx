@@ -54,17 +54,26 @@ export default function SubscribeNewsletter() {
   };
 
   return (
-    <section className="bg-secondary-background dark:bg-gray-900 rounded-md">
+    <section className="bg-white dark:bg-gray-900 rounded-md">
+      {/* bg-secondary-background */}
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="mx-auto max-w-screen-md sm:text-center">
-          <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl">
+        <div className="mx-auto max-w-screen-md sm:text-center flex items-center justify-center">
+          {/* <h2 className="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl">
             Stay Updated with Our Newsletter
           </h2>
           <p className="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
             Stay up to date with the roadmap progress, announcements and
             exclusive updates only to JHUB Newsletter Subscribers.
-          </p>
-          <form>
+          </p> */}
+          <iframe
+            src="https://jhubafrica.substack.com/embed"
+            width="480"
+            height="320"
+            // style={{ border: "1px solid #EEE", background: "#F6F9FF" }}
+            frameBorder="0"
+            scrolling="no"
+          ></iframe>
+          {/* <form>
             <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
               <div className="relative w-full">
                 <label
@@ -120,7 +129,7 @@ export default function SubscribeNewsletter() {
             {submitError && (
               <AlertDanger moreAlertInfo="Either wrong email format or Our backend systems are down" />
             )}
-          </form>
+          </form> */}
         </div>
       </div>
     </section>

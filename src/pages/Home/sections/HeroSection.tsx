@@ -14,53 +14,32 @@ export const partnershipLogos = [
   {
     name: "JKUAT Enterprises",
     logo: jkuates,
-    description: "",
     link: "https://jkuates.co.ke/index.php/",
-    // description: `A trailblazer in industry innovation, JKUAT Enterprises pioneers the creation and
-    // global commercialization of cutting-edge, research-based solutions. From product innovation to
-    // emerging technologies, training, and consultancy, we push boundaries to shape the future, contributing
-    // significantly to various industries.`
   },
   {
     name: "FundingBox",
     logo: fundingbox,
     link: "https://fundingbox.com/",
-    description: "",
-    // description: `At FundingBox, we're not just fostering growth; We are #FundingChampions in every corner of our dynamic ecosystem.
-    // Join the ranks of #FundingChampions with FundingBox, where growth meets opportunity. Elevate your trajectory and redefine your future
-    // with accessible funding opportunities, exclusive partnerships with global brands.`
   },
   {
     name: "Impact Africa Network",
     logo: impactafrica,
     link: "https://impactafrica.network/",
-    description: "",
-    // description: `At FundingBox, we're not just fostering growth; We are #FundingChampions in every corner of our dynamic ecosystem.
-    // Join the ranks of #FundingChampions with FundingBox, where growth meets opportunity. Elevate your trajectory and redefine your future
-    // with accessible funding opportunities, exclusive partnerships with global brands.`
   },
   // ian-logo.png
   {
     name: "AEDIB | NET",
     logo: aedibnet,
     link: "https://aedibnet.eu/",
-    description: "",
-    // description: `AEDIB|NET aims to fortify a shared African-European digital innovation ecosystem, supporting local digital
-    // innovation and start-up ecosystems in Africa. AEDIB|NET mission includes facilitating collaboration between European and African DIHs,
-    // contributing to the growth and advancement of digital initiatives that build and prepare new ventures emerging on the continents.`
   },
   {
     name: "TAIMBA",
     logo: taimba,
     link: "https://taimba.co.ke/",
-    description: "",
-    // description: `Taimba is dedicated to establishing enduring and impactful relationships between farmers and retailers. We realize this
-    // vision through an innovative mobile-based cashless business-to-business platform connecting farmers directly to retailers. Our approach
-    // revolutionizes the agricultural supply chain, fostering efficiency and sustainability in the farming industry.`
   },
 ];
 
-function PartnershipLogos() {
+export function PartnershipLogos() {
   return (
     <Marquee
       pauseOnHover
@@ -112,10 +91,10 @@ function LandingHeroSection() {
           effect="blur"
           className="w-full rounded-xl"
           src={HeroImg}
-          alt="Image Description"
+          alt="Hero Image"
         />
       </div>
-      <PartnershipLogos />
+      {/* <PartnershipLogos /> */}
     </div>
   );
 }

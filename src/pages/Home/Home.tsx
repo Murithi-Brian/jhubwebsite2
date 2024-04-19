@@ -11,8 +11,8 @@ export default function Home() {
       <LandingHeroSection />
       <FeatureList />
       <CommunityHighlights />
-      <BlogSection />
-      <FAQ />
+      {/* <BlogSection /> */}
+      {/* <FAQ /> */}
       <SubscribeNewsletter />
     </div>
   );

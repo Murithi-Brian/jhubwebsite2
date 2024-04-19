@@ -25,6 +25,10 @@ export const navTopLinks = [
     href: "/courses",
   },
   {
+    name: "Events",
+    href: "/events",
+  },
+  {
     name: "Blog",
     href: "/blog",
   },

@@ -44,11 +44,12 @@ module.exports = {
       montserrat: ["Montserrat Alternates", "sans-serif"],
     },
     colors: {
-      // New Colors form redesign
+      // New Colors from redesign
       "neutral-blue": "#0F172A",
       "secondary-blue": "#475569",
       "secondary-background": "#F6F9FF",
       "primary-purple": "#6941C6",
+      "card-blue": "#EDF7FE",
 
       /********
        *TODO, Importing a new primary , this will probably break the theming and so on...
@@ -106,6 +107,7 @@ module.exports = {
       graydark: "#101828", // I changed this on purpose
       "gray-2": "#F7F9FC",
       "gray-3": "#FAFAFA",
+      "card-grey":"#ECEEF1",
       whiten: "#F1F5F9",
       primary: "#3C50E0",
       whiter: "#F5F7FD",

@@ -12,6 +12,7 @@ import {
 // import Logo from "../assets/images/logo/jhub-logo1.png"
 // import Logo from "../assets/images/logo/jhub-log-white-svg.svg";
 import Logo from "../../assets/images/logo/jhub-logo-new.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type FooterLinks = {
   name: string;
@@ -34,21 +35,20 @@ function renderLinks(links: FooterLinks[]) {
 const serviceLinks = [
   { name: "Consultancy", href: "/consultancy" },
   { name: "Training and Courses", href: "/courses" },
-  // { name: "Docu", href: "/documentation" },
 ];
 
 const companyLinks = [
   { name: "About us", href: "/about" },
   { name: "Contact Us", href: "/contact-us" },
   { name: "Events", href: "/events" },
-  { name: "Job opportunities", href: "/career" },
+  { name: "Career", href: "/career" },
   { name: "Innovations admission — join us.", href: "/admissions" },
 ];
 
 const resourceLinks = [
-  { name: "Blog", href: "/blog" },
   { name: "Legal", href: "/legal" },
   { name: "Contact Us", href: "/contact-us" },
+  { name: "FAQ", href: "/faq" },
   { name: "Documentation", href: "/documentation" },
 ];
 
@@ -80,81 +80,14 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
           {/* Logo */}
-          <div className="col-span-full hidden lg:col-span-1 lg:block">
+          <div className="col-span-full lg:col-span-1">
             <Link
-              className="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+              className="hidden lg:block flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
               to="/"
               aria-label="Brand"
             >
-              <img src={Logo} alt="JHUB Africa" />
+              <LazyLoadImage effect="blur" src={Logo} alt="JHUB Africa" />
             </Link>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase text-white dark:text-gray-100">
-              Services
-            </h4>
-            <div className="mt-3 grid space-y-3 text-sm">
-              {renderLinks(serviceLinks)}
-            </div>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Company
-            </h4>
-            <div className="mt-3 grid space-y-3 text-sm">
-              {renderLinks(companyLinks)}
-            </div>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Resources
-            </h4>
-            <div className="mt-3 grid space-y-3 text-sm">
-              {renderLinks(resourceLinks)}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Projects
-            </h4>
-            <div className="mt-3 grid space-y-3 text-sm">
-              {renderLinks(projectLinks)}
-            </div>
-          </div>
-        </div>
-
-        <div className="pt-5 mt-5 border-t border-gray-200 dark:border-gray-700">
-          <div className="sm:flex sm:justify-between sm:items-center sm:space-y-0 space-y-4">
-            <div className="flex justify-between items-center gap-x-3">
-              <div className="space-x-4 text-sm ms-4">
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-terms"
-                >
-                  Terms
-                </Link>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/jhub-privacy"
-                >
-                  Privacy
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">
-                © {currentYear} All rights reserved
-              </p>
-            </div>
-
             {/* social media */}
             <div className="space-x-4 flex justify-center items-center">
               {/* <DarkModeSwitcher /> */}
@@ -201,6 +134,72 @@ export default function Footer() {
               >
                 <IconBrandInstagram />
               </a>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase text-white dark:text-gray-100">
+              Services
+            </h4>
+            <div className="mt-3 grid space-y-3 text-base">
+              {renderLinks(serviceLinks)}
+            </div>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
+              Company
+            </h4>
+            <div className="mt-3 grid space-y-3 text-base">
+              {renderLinks(companyLinks)}
+            </div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
+              Resources
+            </h4>
+            <div className="mt-3 grid space-y-3 text-base">
+              {renderLinks(resourceLinks)}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
+              Projects
+            </h4>
+            <div className="mt-3 grid space-y-3 text-base">
+              {renderLinks(projectLinks)}
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-5 mt-5 border-t border-gray-200 dark:border-gray-700">
+          <div className="sm:flex sm:justify-between sm:items-center sm:space-y-0 space-y-4">
+            <div className="flex justify-center sm:justify-between items-center gap-x-3">
+              <div className="space-x-4 text-base ms-4">
+                <Link
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/legal"
+                >
+                  Terms
+                </Link>
+                <Link
+                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  to="/legal"
+                >
+                  Privacy
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 text-center">
+                © {currentYear} All rights reserved
+              </p>
             </div>
           </div>
         </div>
