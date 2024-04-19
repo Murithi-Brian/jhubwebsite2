@@ -1,4 +1,4 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 import {
   IconAB,
   IconCash,
@@ -7,7 +7,7 @@ import {
   IconStarsFilled,
   IconRocket,
 } from "@tabler/icons-react";
-import FeatureListImg from "../../../assets/home/featureList.png";
+// import FeatureListImg from "../../../assets/home/featureList.png";
 import { PartnershipLogos } from "./HeroSection";
 
 const featureList = [

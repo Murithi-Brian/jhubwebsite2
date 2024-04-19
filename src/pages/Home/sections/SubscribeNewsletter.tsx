@@ -1,57 +1,57 @@
-import { SetStateAction, useState } from "react";
-import { Link } from "react-router-dom";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../../js/firebase";
-import { AlertDanger, AlertSuccess } from "../../../components/alerts";
+// import {  useState } from "react";
+// import { Link } from "react-router-dom";
+// import { addDoc, collection } from "firebase/firestore";
+// import { db } from "../../../js/firebase";
+// import { AlertDanger, AlertSuccess } from "../../../components/alerts";
 
 export default function SubscribeNewsletter() {
-  const [email, setEmail] = useState("");
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  // const [email, setEmail] = useState("");
+  // const [submitSuccess, setSubmitSuccess] = useState(false);
+  // const [submitError, setSubmitError] = useState(false);
 
-  const handleSubscribe = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  // const handleSubscribe = async (e: { preventDefault: () => void }) => {
+  //   e.preventDefault();
 
-    // Regular expression for a simple email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   // Regular expression for a simple email validation
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Check if the email follows a valid format
-    if (!emailRegex.test(email)) {
-      // If not, display an error message and return
-      setSubmitError(true);
-      setTimeout(() => {
-        setSubmitError(false);
-      }, 3500);
-      return;
-    }
+  //   // Check if the email follows a valid format
+  //   if (!emailRegex.test(email)) {
+  //     // If not, display an error message and return
+  //     setSubmitError(true);
+  //     setTimeout(() => {
+  //       setSubmitError(false);
+  //     }, 3500);
+  //     return;
+  //   }
 
-    try {
-      // Add the email to Firestore
-      await addDoc(collection(db, "subscribers"), { email });
+  //   try {
+  //     // Add the email to Firestore
+  //     await addDoc(collection(db, "subscribers"), { email });
 
-      console.log("Subscription successful!");
+  //     console.log("Subscription successful!");
 
-      // You can reset the email field after a successful subscription if needed
-      setEmail("");
+  //     // You can reset the email field after a successful subscription if needed
+  //     setEmail("");
 
-      setSubmitSuccess(true);
-      setTimeout(() => setSubmitSuccess(false), 3500);
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.error("Error subscribing user:", error.message);
-      } else {
-        console.error("Error subscribing user:", error);
-      }
-      setSubmitError(true);
-      setTimeout(() => setSubmitError(false), 3500);
-    }
-  };
+  //     setSubmitSuccess(true);
+  //     setTimeout(() => setSubmitSuccess(false), 3500);
+  //   } catch (error: unknown) {
+  //     if (error instanceof Error) {
+  //       console.error("Error subscribing user:", error.message);
+  //     } else {
+  //       console.error("Error subscribing user:", error);
+  //     }
+  //     setSubmitError(true);
+  //     setTimeout(() => setSubmitError(false), 3500);
+  //   }
+  // };
 
-  const handleChangeEmail = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setEmail(e.target.value);
-  };
+  // const handleChangeEmail = (e: {
+  //   target: { value: SetStateAction<string> };
+  // }) => {
+  //   setEmail(e.target.value);
+  // };
 
   return (
     <section className="bg-white dark:bg-gray-900 rounded-md">
