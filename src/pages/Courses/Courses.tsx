@@ -46,7 +46,7 @@ const courses: CourseProps[] = [
     costPerLearner:
       "$25.50 approx. KES 4,235.00 for 100 learner's single exam or $40.50 approx. KES 6,725.00 for two exam tracks",
     category: "cisco certified support technician (ccst)",
-    href: "",
+    href: "https://certiport.pearsonvue.com/Certifications/Cisco/Certified-Support-Technician/Overview",
   },
   {
     program: "Cisco Certified Support Technician (CCST)",
@@ -58,7 +58,147 @@ const courses: CourseProps[] = [
     costPerLearner:
       "$25.50 approx. KES 4,235.00 for 100 learner's single exam or $40.50 approx. KES 6,725.00 for two exam tracks",
     category: "cisco certified support technician (ccst)",
-    href: "",
+    href: "https://certiport.pearsonvue.com/Certifications/Cisco/Certified-Support-Technician/Overview",
+  },
+  {
+    program: "Entrepreneurship and Small Business (ESB)",
+    SKU: 1105368,
+    description:
+      "(LearnKey) ESB and D4D Courseware, 30 seat License – 300 user Int'l Academic (GMetrix platform)",
+    quantity: 1,
+    cost: 468,
+    costPerLearner: "$21.10 approx. KES 3,505.00 for 200 learner's single exam",
+    category: "entrepreneurship and small business (esb)",
+    href: "https://certiport.pearsonvue.com/Certifications/ESB/Certification/Overview",
+  },
+  {
+    program: "Entrepreneurship and Small Business (ESB)",
+    SKU: 1106058,
+    description:
+      "(CertPREP) ESB 30-Seat/300-User Practice Test License Int'l (GMetrix platform)",
+    quantity: 1,
+    cost: 371,
+    costPerLearner: "$21.10 approx. KES 3,505.00 for 200 learner's single exam",
+    category: "entrepreneurship and small business (esb)",
+    href: "https://certiport.pearsonvue.com/Certifications/ESB/Certification/Overview",
+  },
+  {
+    program: "IC3 Digital Literacy Certification",
+    SKU: 1105365,
+    description:
+      "(LearnKey) IC3 30 Seat License - 300 User Int'l Academic (GMetrix Platform)",
+    quantity: 1,
+    cost: 975,
+    costPerLearner:
+      "$49.50 approx. KES 8,220.00 for 200 learner's three exam tracks",
+    category: "Digital Literacy",
+    href: "https://certiport.pearsonvue.com/Certifications/IC3/Digital-Literacy-Certification/Overview",
+  },
+  {
+    program: "IC3 Digital Literacy Certification",
+    SKU: 1104630,
+    description:
+      "(CertPREP) IC3 Practice Test 30 Seat/300 User License (Full Suite) - Int'l (GMetrix platform)",
+    quantity: 1,
+    cost: 975,
+    costPerLearner:
+      "$49.50 approx. KES 8,220.00 for 200 learner's three exam tracks",
+    category: "Digital Literacy",
+    href: "https://certiport.pearsonvue.com/Certifications/IC3/Digital-Literacy-Certification/Overview",
+  },
+  {
+    program: "IC3 Digital Literacy Certification",
+    SKU: 1106516,
+    description: "IC3 Digital Literacy Universal Voucher + Retake ",
+    quantity: 600,
+    cost: 10920,
+    costPerLearner:
+      "$49.50 approx. KES 8,220.00 for 200 learner's three exam tracks",
+    category: "Digital Literacy",
+    href: "https://certiport.pearsonvue.com/Certifications/IC3/Digital-Literacy-Certification/Overview",
+  },
+  {
+    program: "Intuit Certifications",
+    SKU: 1108822,
+    description:
+      "(CertPREP) Intuit Practice Tests, Individual User License – Single Title (GMetrix platform)",
+    quantity: 100,
+    cost: 3120,
+    costPerLearner:
+      "$39.00 approx. KES 6,475.00 for 100 learner's single exam track of any of the available",
+    category: "Intuit Certifications",
+    href: "https://certiport.pearsonvue.com/Certifications/Intuit/Certifications/Certify/QuickBooks-Certified-User",
+  },
+  {
+    program: "IT Specialist (ITS)",
+    SKU: 1107359,
+    description:
+      "(LearnKey) IT Specialist ecourse 10 Seat/100 User License Int'l (GMetrix Platform)",
+    quantity: 1,
+    cost: 618,
+    costPerLearner:
+      "$23.50 approx. KES 3,905.00 for 100 learner's single exam or $53.50 approx. KES 8,885.00 for three exam tracks",
+    category: "IT Specialist",
+    href: "https://certiport.pearsonvue.com/Certifications/ITSpecialist/Certification/Overview",
+  },
+  {
+    program: "IT Specialist (ITS)",
+    SKU: 1107366,
+    description:
+      "(CertPREP) IT Specialist Practice Tests 10 Seat/100 User License Int'l Academic (GMetrix platform)",
+    quantity: 1,
+    cost: 488,
+    costPerLearner:
+      "$23.50 approx. KES 3,905.00 for 100 learner's single exam or $53.50 approx. KES 8,885.00 for three exam tracks",
+    category: "IT Specialist",
+    href: "https://certiport.pearsonvue.com/Certifications/ITSpecialist/Certification/Overview",
+  },
+  {
+    program: "Meta Digital Marketing Associate (Meta 3)",
+    SKU: 1109002,
+    description:
+      "(CertPREP) Meta Practice Tests, up to 300 User License HED (GMetrix Platform)",
+    quantity: 1,
+    cost: 1326,
+    costPerLearner: "$18.40 approx. KES 3,055.00 for 300 learner's single exam",
+    category: "Meta 3",
+    href: "https://certiport.pearsonvue.com/Certifications/Meta/Certification/Overview",
+  },
+  {
+    program: "Microsoft Office Specialist (MOS)",
+    SKU: 1105358,
+    description:
+      "(LearnKey) MOS 10 Seat License Suite - 100 User Int'l Academic (GMetrix Platform)",
+    quantity: 1,
+    cost: 618,
+    costPerLearner:
+      "$24.15 approx. KES 4,010.00 for 100 learner's single exam or $54.15 approx. KES 8,985.00 for three exam tracks",
+    category: "Microsoft Office Specialist",
+    href: "https://certiport.pearsonvue.com/Certifications/Microsoft/MOS/Overview",
+  },
+  {
+    program: "Microsoft Office Specialist (MOS)",
+    SKU: 1104611,
+    description:
+      "(CertPREP) MOS 10-Seat/100 User Practice Test License, Full Suite - Int'l (GMetrix platform)",
+    quantity: 1,
+    cost: 572,
+    costPerLearner:
+      "$24.15 approx. KES 4,010.00 for 100 learner's single exam or $54.15 approx. KES 8,985.00 for three exam tracks",
+    category: "Microsoft Office Specialist",
+    href: "https://certiport.pearsonvue.com/Certifications/Microsoft/MOS/Overview",
+  },
+  {
+    program: "Microsoft Certified Fundamentals (MCF)",
+    SKU: 1106731,
+    description:
+      "(CertPREP) Microsoft Fundamentals Practice Test 10 Seat/100 User License - Int'l (GMetrix Platform)",
+    quantity: 1,
+    cost: 488,
+    costPerLearner:
+      "$18.75 approx. KES 3,115.00 for 100 learner's single exam or $48.75 approx. KES 8,095.00 for three exam tracks",
+    category: "Microsoft Certified Fundamentals",
+    href: "https://certiport.pearsonvue.com/Certifications/Microsoft/MCF/Overview",
   },
   {
     program: "Communication Skills for Business",
@@ -80,146 +220,6 @@ const courses: CourseProps[] = [
     cost: 624,
     costPerLearner: "$23.40 approx. KES 3,885.00 for 100 learner's single exam",
     category: "communication skills for business",
-    href: "",
-  },
-  {
-    program: "Entrepreneurship and Small Business (ESB)",
-    SKU: 1105368,
-    description:
-      "(LearnKey) ESB and D4D Courseware, 30 seat License – 300 user Int'l Academic (GMetrix platform)",
-    quantity: 1,
-    cost: 468,
-    costPerLearner: "$21.10 approx. KES 3,505.00 for 200 learner's single exam",
-    category: "entrepreneurship and small business (esb)",
-    href: "",
-  },
-  {
-    program: "Entrepreneurship and Small Business (ESB)",
-    SKU: 1106058,
-    description:
-      "(CertPREP) ESB 30-Seat/300-User Practice Test License Int'l (GMetrix platform)",
-    quantity: 1,
-    cost: 371,
-    costPerLearner: "$21.10 approx. KES 3,505.00 for 200 learner's single exam",
-    category: "entrepreneurship and small business (esb)",
-    href: "",
-  },
-  {
-    program: "IC3 Digital Literacy Certification",
-    SKU: 1105365,
-    description:
-      "(LearnKey) IC3 30 Seat License - 300 User Int'l Academic (GMetrix Platform)",
-    quantity: 1,
-    cost: 975,
-    costPerLearner:
-      "$49.50 approx. KES 8,220.00 for 200 learner's three exam tracks",
-    category: "Digital Literacy",
-    href: "",
-  },
-  {
-    program: "IC3 Digital Literacy Certification",
-    SKU: 1104630,
-    description:
-      "(CertPREP) IC3 Practice Test 30 Seat/300 User License (Full Suite) - Int'l (GMetrix platform)",
-    quantity: 1,
-    cost: 975,
-    costPerLearner:
-      "$49.50 approx. KES 8,220.00 for 200 learner's three exam tracks",
-    category: "Digital Literacy",
-    href: "",
-  },
-  {
-    program: "IC3 Digital Literacy Certification",
-    SKU: 1106516,
-    description: "IC3 Digital Literacy Universal Voucher + Retake ",
-    quantity: 600,
-    cost: 10920,
-    costPerLearner:
-      "$49.50 approx. KES 8,220.00 for 200 learner's three exam tracks",
-    category: "Digital Literacy",
-    href: "",
-  },
-  {
-    program: "Intuit Certifications",
-    SKU: 1108822,
-    description:
-      "(CertPREP) Intuit Practice Tests, Individual User License – Single Title (GMetrix platform)",
-    quantity: 100,
-    cost: 3120,
-    costPerLearner:
-      "$39.00 approx. KES 6,475.00 for 100 learner's single exam track of any of the available",
-    category: "Intuit Certifications",
-    href: "",
-  },
-  {
-    program: "IT Specialist (ITS)",
-    SKU: 1107359,
-    description:
-      "(LearnKey) IT Specialist ecourse 10 Seat/100 User License Int'l (GMetrix Platform)",
-    quantity: 1,
-    cost: 618,
-    costPerLearner:
-      "$23.50 approx. KES 3,905.00 for 100 learner's single exam or $53.50 approx. KES 8,885.00 for three exam tracks",
-    category: "IT Specialist",
-    href: "",
-  },
-  {
-    program: "IT Specialist (ITS)",
-    SKU: 1107366,
-    description:
-      "(CertPREP) IT Specialist Practice Tests 10 Seat/100 User License Int'l Academic (GMetrix platform)",
-    quantity: 1,
-    cost: 488,
-    costPerLearner:
-      "$23.50 approx. KES 3,905.00 for 100 learner's single exam or $53.50 approx. KES 8,885.00 for three exam tracks",
-    category: "IT Specialist",
-    href: "",
-  },
-  {
-    program: "Meta 3",
-    SKU: 1109002,
-    description:
-      "(CertPREP) Meta Practice Tests, up to 300 User License HED (GMetrix Platform)",
-    quantity: 1,
-    cost: 1326,
-    costPerLearner: "$18.40 approx. KES 3,055.00 for 300 learner's single exam",
-    category: "Meta 3",
-    href: "",
-  },
-  {
-    program: "Microsoft Office Specialist (MOS)",
-    SKU: 1105358,
-    description:
-      "(LearnKey) MOS 10 Seat License Suite - 100 User Int'l Academic (GMetrix Platform)",
-    quantity: 1,
-    cost: 618,
-    costPerLearner:
-      "$24.15 approx. KES 4,010.00 for 100 learner's single exam or $54.15 approx. KES 8,985.00 for three exam tracks",
-    category: "Microsoft Office Specialist",
-    href: "",
-  },
-  {
-    program: "Microsoft Office Specialist (MOS)",
-    SKU: 1104611,
-    description:
-      "(CertPREP) MOS 10-Seat/100 User Practice Test License, Full Suite - Int'l (GMetrix platform)",
-    quantity: 1,
-    cost: 572,
-    costPerLearner:
-      "$24.15 approx. KES 4,010.00 for 100 learner's single exam or $54.15 approx. KES 8,985.00 for three exam tracks",
-    category: "Microsoft Office Specialist",
-    href: "",
-  },
-  {
-    program: "Microsoft Certified Fundamentals (MCF)",
-    SKU: 1106731,
-    description:
-      "(CertPREP) Microsoft Fundamentals Practice Test 10 Seat/100 User License - Int'l (GMetrix Platform)",
-    quantity: 1,
-    cost: 488,
-    costPerLearner:
-      "$18.75 approx. KES 3,115.00 for 100 learner's single exam or $48.75 approx. KES 8,095.00 for three exam tracks",
-    category: "Microsoft Certified Fundamentals",
     href: "",
   },
   {

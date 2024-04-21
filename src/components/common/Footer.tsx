@@ -47,6 +47,7 @@ const companyLinks = [
 
 const resourceLinks = [
   { name: "Legal", href: "/legal" },
+  { name: "Cookie Policy", href: "/cookie-policy"},
   { name: "Contact Us", href: "/contact-us" },
   { name: "FAQ", href: "/faq" },
   { name: "Documentation", href: "/documentation" },

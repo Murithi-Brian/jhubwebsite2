@@ -18,6 +18,7 @@ import SinglePost from "../pages/Blog/SinglePost";
 import ContactUs from "../pages/ContactUs";
 import Documentation from "../pages/Documentation";
 import FAQ from "../pages/Home/sections/FAQ";
+import CookiePolicy from "../pages/Legal/CookiePolicy";
 // info.jhub@jkuat.ac.ke
 export const router = createBrowserRouter([
   {
@@ -126,6 +127,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Spinners />}>
             <FAQ />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cookie-policy",
+        element: (
+          <Suspense fallback={<Spinners />}>
+            <CookiePolicy />
           </Suspense>
         ),
       },
