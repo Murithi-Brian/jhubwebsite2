@@ -18,6 +18,8 @@ import Documentation from "../pages/Documentation";
 import FAQ from "../pages/Home/sections/FAQ";
 import CookiePolicy from "../pages/Legal/CookiePolicy";
 // info.jhub@jkuat.ac.ke
+
+// TODO: Fix layout issue
 export const router = createBrowserRouter([
   {
     path: "/",
