@@ -14,6 +14,8 @@ import { Link } from "react-router-dom";
 const FeaturedProjects = () => {
   const [projects] = useState({
     "Digital Transformation": [
+      // Digital Health
+      // Enterprise Business Support
       {
         tags: [
           "Data Protection Act",
@@ -26,8 +28,24 @@ const FeaturedProjects = () => {
         href: "https://datalawcompanion.org/",
         imageURL: DLCLaptop,
       },
+      {
+        tags: ["Artificial Intelligence", "Collaborative Innovation"],
+        title: "Research and Innovators Ecosystem",
+        description:
+          "The Research and Innovators Ecosystem is an inclusive platform that facilitate collaboration and resource sharing among researchers, scholars, students, and innovators worldwide. The platform has unique AI-powered partner recommendation that help researchers and innovators acquires partners to collaborate with in a project.",
+        href: "https://id-coders.jhubafrica.com/",
+        imageURL: IdCoder,
+      },
     ],
     "Climate Smart Agriculture": [
+      {
+        tags: ["Solar Energy", "Automated Irrigation System"],
+        title: "Agro Manna ",
+        description:
+          "Agro Manna is a sensor-based automated irrigation system for effective use of water in semi-arid areas. It aims at increasing the acreage of farms. Powered by Solar energy",
+        href: "https://agromanna.jhubafrica.com/",
+        imageURL: AgroManna,
+      },
       {
         tags: ["Smart Farm"],
         title: "Green Mushroom Smartfarm and Spawns",
@@ -37,16 +55,7 @@ const FeaturedProjects = () => {
         imageURL: MushroomFarm,
       },
     ],
-    "Green Digital Innovation": [
-      {
-        tags: ["Solar Energy", "Automated Irrigation System"],
-        title: "Agro Manna ",
-        description:
-          "Agro Manna is a sensor-based automated irrigation system for effective use of water in semi-arid areas. It aims at increasing the acreage of farms. Powered by Solar energy",
-        href: "https://agromanna.jhubafrica.com/",
-        imageURL: AgroManna,
-      },
-    ],
+    "Green Digital Innovation": [],
     "Digital Twin Models": [],
     "Digital Trade": [
       {
@@ -56,14 +65,6 @@ const FeaturedProjects = () => {
           "We are an organization dedicated to helping people hold successful online fundraising events. We have extensive experience in organizing and executing online fundraising events for a variety of causes, and we understand the challenges and opportunities associated with them. Our team of professionals is committed to helping you make your event a success. Our goal is to provide you with the tools and resources necessary to make your fundraiser a success. We look forward to helping you reach your fundraising goals!",
         href: "https://tuokoleane.jhubafrica.com/",
         imageURL: Tuokoleane,
-      },
-      {
-        tags: ["Artificial Intelligence", "Collaborative Innovation"],
-        title: "Research and Innovators Ecosystem",
-        description:
-          "The Research and Innovators Ecosystem is an inclusive platform that facilitate collaboration and resource sharing among researchers, scholars, students, and innovators worldwide. The platform has unique AI-powered partner recommendation that help researchers and innovators acquires partners to collaborate with in a project.",
-        href: "https://id-coders.jhubafrica.com/",
-        imageURL: IdCoder,
       },
     ],
   });

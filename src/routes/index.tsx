@@ -1,6 +1,4 @@
-import {
-  createBrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import BaseLayout from "../components/common/BaseLayout";
 import Home from "../pages/Home/Home";
 import { Suspense } from "react";
@@ -23,121 +21,165 @@ import CookiePolicy from "../pages/Legal/CookiePolicy";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <BaseLayout />,
     errorElement: <Error10 />,
-    children: [
-      {
-        path: "/",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <Home />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/about",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <About />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/events",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <Events />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/courses",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <TrainingProgram />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/projects",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <Projects />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/projects/:id",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <SingleProjectView />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/blog",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <BlogPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/blog/:slug",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <SinglePost />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/consultancy",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <RequestConsultation />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/career",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <Career />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/contact-us",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <ContactUs />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/documentation",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <Documentation />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/faq",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <FAQ />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/cookie-policy",
-        element: (
-          <Suspense fallback={<Spinners />}>
-            <CookiePolicy />
-          </Suspense>
-        ),
-      },
-    ],
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <Home />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/about",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <About />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/events",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <Events />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/courses",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <TrainingProgram />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/projects",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <Projects />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/projects/:id",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <SingleProjectView />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/blog",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <BlogPage />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/blog/:slug",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <SinglePost />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/consultancy",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <RequestConsultation />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/career",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <Career />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/contact-us",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <ContactUs />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/documentation",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <Documentation />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/faq",
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <FAQ />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/cookie-policy",
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <CookiePolicy />
+        </BaseLayout>
+      </Suspense>
+    ),
   },
 ]);

@@ -40,6 +40,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     >
       <Content />
     </CookieConsent>
+    
     <Toaster
       position="top-right"
       toastOptions={{
