@@ -4,20 +4,22 @@ import MidBg from "../../../assets/singleProjectView/mid.png"
 
 const ProjectDetails = () => {
   return (
-    <section className="bg-secondary-background">
+    <section className="bg-secondary-background mt-10">
       <div className="mx-auto">
         {/* Challenge */}
         <article className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto px-4">
           <div className="space-y-4 w-full sm:w-auto max-w-xl">
             <h2 className="font-medium text-3xl">The Challenge</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-              ultrices nulla. Nulla eget aliquam elit. Vivamus convallis massa
-              sit amet neque dignissim, ac pellentesque mi rhoncus. Nullam nec
-              enim felis. Suspendisse sit amet accumsan orci. Phasellus sed
-              libero id eros dapibus pulvinar. Maecenas in varius nisl. Fusce
-              ultricies, quam non tempus consequat, nunc risus luctus justo, ac
-              fermentum ex mi sit amet felis.
+              In our quest to revolutionize agriculture, we embrace sustainable,
+              technology-driven solutions that promise a greener tomorrow.
+              Climate Smart Agriculture at JHUB Africa is about more than just
+              increasing crop yields; it's about pioneering practices that
+              enhance resilience to climate change, optimize resource use, and
+              support the well-being of local communities. By leveraging
+              advanced analytics, IoT innovations, and smart farming techniques,
+              we empower farmers to make informed decisions, ensuring food
+              security and environmental sustainability for generations to come.
             </p>
           </div>
           <div className="mt-0 sm:mt-4">

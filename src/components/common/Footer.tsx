@@ -8,9 +8,6 @@ import {
   IconBrandTwitter,
   IconBrandYoutube,
 } from "@tabler/icons-react";
-// import DarkModeSwitcher from "./DarkModeSwitcher";
-// import Logo from "../assets/images/logo/jhub-logo1.png"
-// import Logo from "../assets/images/logo/jhub-log-white-svg.svg";
 import Logo from "../../assets/images/logo/jhub-logo-new.svg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -46,8 +43,7 @@ const companyLinks = [
 ];
 
 const resourceLinks = [
-  { name: "Legal", href: "/legal" },
-  { name: "Cookie Policy", href: "/cookie-policy"},
+  { name: "Legal", href: "/cookie-policy" },
   { name: "Contact Us", href: "/contact-us" },
   { name: "FAQ", href: "/faq" },
   { name: "Documentation", href: "/documentation" },

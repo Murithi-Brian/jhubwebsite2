@@ -10,7 +10,7 @@ type ProjectItemPropsType = {
 const ProjectItem = ({ ProjectItemProps }: ProjectItemPropsType) => {
   return (
     <article className="w-full px-4">
-      <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
+      <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 max-w-screen-xl mx-auto">
         <div className="space-y-4 w-full sm:w-auto max-w-xl">
           <p className="gap-6 text-success text-sm">
             {ProjectItemProps.tags.map((tag, index) => (

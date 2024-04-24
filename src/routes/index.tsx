@@ -17,9 +17,9 @@ import ContactUs from "../pages/ContactUs";
 import Documentation from "../pages/Documentation";
 import FAQ from "../pages/Home/sections/FAQ";
 import CookiePolicy from "../pages/Legal/CookiePolicy";
-// info.jhub@jkuat.ac.ke
+import SingleModelView from "../pages/ProjectModelView/SingleModelView";
 
-// TODO: Fix layout issue
+// TODO: Fix layout/outlet issue
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -81,9 +81,20 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/projects/:id",
+    path: "/all-projects",
     errorElement: <Error10 />,
 
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <SingleModelView />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/projects/:id",
+    errorElement: <Error10 />,
     element: (
       <Suspense fallback={<Spinners />}>
         <BaseLayout>

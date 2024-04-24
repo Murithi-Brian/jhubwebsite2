@@ -7,7 +7,7 @@ import MushroomFarm from "../../../assets/projects/mushroomFarm.png";
 import SearchingGif from "../../../assets/projects/searching.gif";
 import AgroManna from "../../../assets/projects/agromanna.jpeg";
 import IdCoder from "../../../assets/projects/idCoder.png";
-import Tuokoleane from "../../../assets/projects/tuokoleane.jpeg"
+import Tuokoleane from "../../../assets/projects/tuokoleane.jpeg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
@@ -86,6 +86,7 @@ const FeaturedProjects = () => {
         <h2 className="mt-12 mb-4 text-2xl font-medium text-success dark:text-white text-center">
           Projects
         </h2>
+
         <Tab.Group>
           <Tab.List className="flex gap-8 overflow-x-auto">
             {Object.keys(projects).map((category) => (

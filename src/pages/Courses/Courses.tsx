@@ -14,6 +14,17 @@ type CourseProps = {
 
 const courses: CourseProps[] = [
   {
+    program: "Rapid Tech Skills Training",
+    SKU: 0,
+    description:
+      "Offers wide array of topics essential for navigating the current tech landscape",
+    quantity: 1,
+    cost: 0,
+    costPerLearner: "0",
+    category: "SKIES",
+    href: "https://fabulous-galette-239.notion.site/Rapid-Tech-Skills-Training-4e53210ee97a481d8eb3de72d3d9cd43?pvs=4",
+  },
+  {
     program: "Swift 1",
     SKU: 1108610,
     description:

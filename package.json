@@ -27,7 +27,6 @@
     "@react-pdf/renderer": "^3.4.2",
     "@sanity/client": "^6.15.3",
     "@sanity/image-url": "^1.0.2",
-    "@schlomoh/react-cookieconsent": "^1.6.1",
     "@tabler/icons-react": "^2.42.0",
     "@types/node": "20.4.8",
     "apexcharts": "^3.41.1",
