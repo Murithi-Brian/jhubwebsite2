@@ -16,15 +16,6 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    }),
-    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -38,11 +29,17 @@ export default defineType({
       type: 'array',
       of: [{type: 'reference', to: {type: 'projectCategory'}}],
     }),
+
     defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',
       of: [{type: 'string'}],
+    }),
+    defineField({
+      name: 'website',
+      title: 'Website URL',
+      type: 'url',
     }),
   ],
 

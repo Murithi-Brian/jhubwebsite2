@@ -54,7 +54,6 @@ const SinglePost = () => {
       )
       .then((data) => {
         setPostData(data[0]);
-        console.log("single post", data[0]);
       })
       .catch(console.error);
   }, [slug]);

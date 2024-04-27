@@ -1,4 +1,8 @@
-import { Fragment, useState, useEffect } from "react";
+import {
+  Fragment,
+  useState,
+  useEffect,
+} from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -7,7 +11,18 @@ import { IconChevronDown } from "@tabler/icons-react";
 import Logo from "../../assets/images/logo/jhub-logo-new.svg";
 import { classNames } from "../../utils/classes";
 
-export const navTopLinks = [
+type ItemType = {
+  item: {
+    name: string;
+    href: string;
+    subMenu?: {
+      name: string;
+      href: string;
+    }[];
+  };
+};
+
+const navTopLinks = [
   {
     name: "Home",
     href: "/",
@@ -19,6 +34,28 @@ export const navTopLinks = [
   {
     name: "Projects",
     href: "/projects",
+    subMenu: [
+      {
+        name: "Digital Transformation",
+        href: "/projects/digital-transformation",
+      },
+      {
+        name: "Climate Smart Agriculture",
+        href: "/projects/climate-smart-agriculture",
+      },
+      {
+        name: "Green Digital Innovation",
+        href: "/projects/green-digital-innovation",
+      },
+      {
+        name: "Digital Twin Models",
+        href: "/projects/digital-twin-models",
+      },
+      {
+        name: "Digital Trade",
+        href: "/projects/digital-trade",
+      },
+    ],
   },
   {
     name: "Courses",
@@ -47,8 +84,8 @@ const serviceLinks = [
 
 function ServicesTab() {
   return (
-    <div className="absolute inline-block text-right">
-      <Menu as="div" className="relative text-left sm:ml-18 sm:mt-0 mt-6">
+    <div className="inline-block text-right z-10">
+      <Menu as="div" className="relative text-left sm:ml-18 ">
         <div>
           <Menu.Button className="inline-flex bg-white w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-success shadow-sm ring-1 ring-inset ring-success">
             Services
@@ -90,18 +127,63 @@ function ServicesTab() {
   );
 }
 
+function DropDownMenu({ item }: ItemType) {
+  return (
+    <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button className="inline-flex justify-start gap-x-1.5 w-full py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none hover:text-success hover:underline">
+          {item.name}
+          <IconChevronDown className="-mr-1 h-5 w-5" aria-hidden="true" />
+        </Menu.Button>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="origin-top-right bg-white absolute block left-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1 divide-y divide-gray-100">
+            {item.subMenu?.map(
+              (
+                subItem: {
+                  href: string;
+                  name: string;
+                },
+                subIndex: number
+              ) => (
+                <Menu.Item key={subIndex}>
+                  {({ active }) => (
+                    <a
+                      href={subItem.href}
+                      className={classNames(
+                        active ? "bg-gray-100 text-success" : "text-gray-700",
+                        "block px-4 py-3 text-sm hover:text-success"
+                      )}
+                    >
+                      {subItem.name}
+                    </a>
+                  )}
+                </Menu.Item>
+              )
+            )}
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  );
+}
+
 export default function NavBar() {
   const [showUpperDropdown, setShowUpperDropdown] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  // const trigger = useRef<any>(null);
-  // const _dropdown = useRef<any>(null);
 
   const { pathname } = useLocation();
   const isDashboardPage = pathname === "/dashboard";
-
-  // const toggleDropdown = () => {
-  //   setShowDropdown((prevDropdownState) => !prevDropdownState);
-  // };
 
   const toggleUpperDropdown = () => {
     setShowUpperDropdown((prevUpperDropdownState) => !prevUpperDropdownState);
@@ -126,7 +208,7 @@ export default function NavBar() {
           <Link
             className="flex-none text-3xl font-semibold"
             to="/"
-            aria-label="jhub Suite Brand"
+            aria-label="jhub Brand"
           >
             <LazyLoadImage
               className="w-16 h-16 sm:w-28 sm:h-28"
@@ -176,25 +258,29 @@ export default function NavBar() {
           id="navbar-collapse-with-animation"
           className={`hs-collapse ${
             showUpperDropdown ? "" : "hidden"
-          } overflow-hidden transition-all duration-300 basis-full grow sm:block`}
+          } transition-all duration-300 basis-full grow sm:block`}
         >
           <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
-            {navTopLinks.map((link, i) => (
-              <Link
-                to={link?.href}
-                key={i}
-                className={`font-semibold ${
-                  location.pathname === link?.href
-                    ? "text-success underline"
-                    : "text-main"
-                } hover:text-gray sm:py-6 dark:text-gray dark:hover:text-gray`}
-              >
-                {link?.name}{" "}
-              </Link>
-            ))}
+            {navTopLinks.map((link, i) =>
+              link.name === "Projects" ? (
+                <DropDownMenu item={link} key={i} />
+              ) : (
+                <Link
+                  to={link?.href}
+                  key={i}
+                  className={`font-semibold ${
+                    location.pathname === link?.href
+                      ? "text-success underline"
+                      : "text-main"
+                  } hover:text-gray sm:py-6 dark:text-gray dark:hover:text-gray`}
+                >
+                  {link?.name}{" "}
+                </Link>
+              )
+            )}
 
             {/* Services */}
-            <div className="w-56 flex items-center">
+            <div className="w-56 flex items-center h-full">
               <ServicesTab />
             </div>
 

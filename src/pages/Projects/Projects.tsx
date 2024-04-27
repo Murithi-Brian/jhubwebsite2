@@ -1,10 +1,10 @@
-import FeaturedProjects from './sections/FeaturedProjects'
+// import FeaturedProjects from './sections/FeaturedProjects'
 import CTA from '../About/sections/CTA'
 
 const Projects = () => {
   return (
     <div>
-      <FeaturedProjects/>
+      {/* <FeaturedProjects/> */}
       <CTA/>
     </div>
   )

@@ -7,8 +7,8 @@ import Error10 from "../pages/NotFound";
 import About from "../pages/About/About";
 import Events from "../pages/Events/Events";
 import TrainingProgram from "../pages/Courses/Courses";
-import Projects from "../pages/Projects/Projects";
-import SingleProjectView from "../pages/SingleProjectView/SingleProjectView";
+// import Projects from "../pages/Projects/Projects";
+// import SingleProjectView from "../pages/SingleProjectView/SingleProjectView";
 import BlogPage from "../pages/Blog/Blog";
 import RequestConsultation from "../pages/Consultancy";
 import Career from "../pages/Career/Career";
@@ -68,37 +68,26 @@ export const router = createBrowserRouter([
       </Suspense>
     ),
   },
-  {
-    path: "/projects",
-    errorElement: <Error10 />,
+  // {
+  //   path: "/projects",
+  //   errorElement: <Error10 />,
 
-    element: (
-      <Suspense fallback={<Spinners />}>
-        <BaseLayout>
-          <Projects />
-        </BaseLayout>
-      </Suspense>
-    ),
-  },
+  //   element: (
+  //     <Suspense fallback={<Spinners />}>
+  //       <BaseLayout>
+  //         <Projects />
+  //       </BaseLayout>
+  //     </Suspense>
+  //   ),
+  // },
   {
-    path: "/all-projects",
+    path: "/projects/:slug",
     errorElement: <Error10 />,
 
     element: (
       <Suspense fallback={<Spinners />}>
         <BaseLayout>
           <SingleModelView />
-        </BaseLayout>
-      </Suspense>
-    ),
-  },
-  {
-    path: "/projects/:id",
-    errorElement: <Error10 />,
-    element: (
-      <Suspense fallback={<Spinners />}>
-        <BaseLayout>
-          <SingleProjectView />
         </BaseLayout>
       </Suspense>
     ),

@@ -2,6 +2,7 @@ import { PortableTextComponents } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../../utils/sanityClient";
 import { useRef, useEffect } from "react";
+import { IconSeeding } from "@tabler/icons-react";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -12,6 +13,39 @@ export const urlFor = (source: {
   };
 }) => {
   return builder.image(source);
+};
+
+export const ModelViewComponents: PortableTextComponents = {
+  marks: {
+    em: ({ children }) => (
+      <em className="text-gray-600 font-semibold">{children}</em>
+    ),
+
+    link: ({ value, children }) => {
+      const target = (value?.href || "").startsWith("http")
+        ? "_blank"
+        : undefined;
+      return (
+        <a
+          href={value?.href}
+          target={target}
+          rel={target === "_blank" ? "noindex nofollow" : ""}
+        >
+          {children}
+        </a>
+      );
+    },
+  },
+  block: {
+    h1: ({ children }) => <h1 className="text-2xl">{children}</h1>,
+    h4: ({ children }) => (
+      <h2 className="font-medium text-3xl flex items-center gap-4">
+        <IconSeeding className="text-[#6941C6]" />
+        {children}
+      </h2>
+    ),
+    normal: ({ children }) => <p className="text-lg py-3">{children}</p>,
+  },
 };
 
 export const components: PortableTextComponents = {
