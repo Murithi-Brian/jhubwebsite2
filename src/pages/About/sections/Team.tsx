@@ -98,7 +98,8 @@ function Team() {
         description: `Dr John Kinyuru is an esteemed Food and Nutrition Scientist with great leadership and project management capabilities. Director of research and innovation at Jomo Kenyatta University of Agriculture and Technology(JKUAT), and researcher in Agriculture, food, and nutrition. A food systems and nutrition-sensitive agriculture expert, he is typically the insect hunter(specialist of edible insects), passionate about food security through research and implementation. Dr John Kinyuru is a key member of the JHUB Africa project whose role will transform the food and nutrition ecosystem.`,
         twitterLink: `https://twitter.com/jkinyuru`,
         facebookLink: ``,
-        linkedInLink: "https://www.linkedin.com/in/dr-john-kinyuru-phd-rns-7a797120/",
+        linkedInLink:
+          "https://www.linkedin.com/in/dr-john-kinyuru-phd-rns-7a797120/",
       },
     ],
     "ADVISORY BOARD": [
@@ -211,7 +212,7 @@ function Team() {
         memberImageUrl: Derrick,
         memberName: `Derrick Obwatsa`,
         memberRole: `DevOps Engineer`,
-        description: `For over 5 years i have created both small and (considerably) large web applications using JavaScript frameworks and runtimes like NodeJS and VueJS. I am especially skilled in VueJS as a front-end frameworkthat I use to add comprehensive dynamism in my web applications.`,
+        description: `A Computer Science major and skilled DevOps engineer, I specialize in backend development and infrastructure automation. My expertise includes designing and implementing APIs using PHP, Node.js, Python, and Java. I excel in setting up servers, orchestrating CI/CD pipelines, and containerizing applications with Docker and Kubernetes. My troubleshooting skills ensure seamless performance, and I’m passionate about continuous learning.`,
         twitterLink: ``,
         facebookLink: ``,
         linkedInLink: `https://www.linkedin.com/in/obwatsamd/`,

@@ -39,7 +39,7 @@ const BlogPage = () => {
       )
       .then((data: BlogPostType[]) => {
         setAllPosts(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch(console.error);
   }, []);

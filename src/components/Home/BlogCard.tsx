@@ -1,6 +1,7 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { BlogPostType } from "../../types/home";
+import defaultImg from "../../assets/images/blogs/default.jpeg";
 
 type BlogCardPropsType = {
   BlogPost: BlogPostType;
@@ -36,7 +37,7 @@ export default function BlogCard({ BlogPost }: BlogCardPropsType) {
         <LazyLoadImage
           effect="blur"
           className="w-8 h-8 rounded-full"
-          src={BlogPost.authorImage.asset.url}
+          src={BlogPost.authorImage?.asset?.url || defaultImg}
           alt={BlogPost.name}
         />
         <div>

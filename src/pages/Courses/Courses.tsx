@@ -296,7 +296,7 @@ export default function TrainingProgram() {
                 <div className="text-lg font-bold flex items-center gap-2 w-full">
                   {new Intl.NumberFormat("en-US", {
                     style: "currency",
-                    currency: "USD",
+                    currency: "KES",
                   }).format(cost)}{" "}
                   <Tooltip message={`✨ ${costPerLearner}`}>
                     <IconHelpHexagon />
