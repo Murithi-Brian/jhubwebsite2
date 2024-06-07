@@ -18,6 +18,7 @@ import Documentation from "../pages/Documentation";
 import FAQ from "../pages/Home/sections/FAQ";
 import CookiePolicy from "../pages/Legal/CookiePolicy";
 import SingleModelView from "../pages/ProjectModelView/SingleModelView";
+import SingleEventView from "../pages/Events/SingleEventView";
 
 // TODO: Fix layout/outlet issue
 export const router = createBrowserRouter([
@@ -45,13 +46,37 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/events",
+    path: "/events/upcoming",
     errorElement: <Error10 />,
 
     element: (
       <Suspense fallback={<Spinners />}>
         <BaseLayout>
           <Events />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/events/past",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <Events />
+        </BaseLayout>
+      </Suspense>
+    ),
+  },
+  {
+    path: "/events/:slug",
+    errorElement: <Error10 />,
+
+    element: (
+      <Suspense fallback={<Spinners />}>
+        <BaseLayout>
+          <SingleEventView />
         </BaseLayout>
       </Suspense>
     ),
