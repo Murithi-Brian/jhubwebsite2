@@ -77,7 +77,7 @@ export default function FeatureList() {
             />
           </div> */}
 
-      <div className="mb-8 lg:mb-16">
+      <div className="mb-8 lg:mb-16 text-center sm:text-left">
         <h2 className="mb-4 text-xl font-medium text-success dark:text-white">
           Services
         </h2>
@@ -91,7 +91,7 @@ export default function FeatureList() {
           dynamic needs of a rapidly evolving digital era.
         </p>
       </div>
-      <div className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 w-full place-items-center">
         {featureList.map((feature) => (
           <div className="flip-card bg-transparent" key={crypto.randomUUID()}>
             <div className="flip-card-inner">
