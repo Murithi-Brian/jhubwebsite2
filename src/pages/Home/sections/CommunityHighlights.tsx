@@ -1,10 +1,36 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-// import NetworkImg from "../../../assets/home/networkImg.jpg";
-import NetworkImg from "../../../assets/home/Slo.jpg";
+import {
+  jhubTeam001,
+  jhubTeam002,
+  jhubTeam004,
+  jhubTeam005,
+  jhubTeam006,
+  jhubTeam007,
+  jhubTeam008,
+  jhubTeam009,
+  jhubTeam010,
+  jhubTeam011,
+  jhubTeam012,
+  jhubTeam013,
+  Slo,
+} from "../../../assets/images/community";
+import Carousel from "../../../components/Home/Caroussel";
 
-// import EventsImg from "../../../assets/home/jhub-team-002.jpg";
-// import ResourcesImg from "../../../assets/home/resourcesImg.jpg";
+const carouselImages = [
+  { idx: 1, img: jhubTeam001 },
+  { idx: 2, img: jhubTeam002 },
+  { idx: 3, img: jhubTeam004 },
+  { idx: 4, img: jhubTeam005 },
+  { idx: 5, img: jhubTeam006 },
+  { idx: 6, img: jhubTeam007 },
+  { idx: 7, img: jhubTeam008 },
+  { idx: 8, img: jhubTeam009 },
+  { idx: 9, img: jhubTeam010 },
+  { idx: 10, img: jhubTeam011 },
+  { idx: 11, img: jhubTeam012 },
+  { idx: 12, img: jhubTeam013 },
+  { idx: 13, img: Slo },
+];
 
 const CommunityHighlights = () => {
   return (
@@ -13,7 +39,7 @@ const CommunityHighlights = () => {
         Community Highlights
       </h2>
 
-      {/* newtwork */}
+      {/* network */}
       <div className="w-full bg-main px-4 text-whiter">
         <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
           <div className="space-y-4 w-full sm:w-auto">
@@ -43,12 +69,7 @@ const CommunityHighlights = () => {
             </div>
           </div>
           <div>
-            <LazyLoadImage
-              effect="blur"
-              src={NetworkImg}
-              alt="Network image"
-              className="w-[486px] rounded-lg"
-            />
+            <Carousel images={carouselImages} />
           </div>
         </div>
       </div>

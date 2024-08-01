@@ -78,6 +78,40 @@ export const components: PortableTextComponents = {
   },
 };
 
+export const previewComponents: PortableTextComponents = {
+  marks: {
+    em: ({ children }) => (
+      <em className="text-gray-600 font-semibold">{children}</em>
+    ),
+
+    link: ({ value, children }) => {
+      const target = (value?.href || "").startsWith("http")
+        ? "_blank"
+        : undefined;
+      return (
+        <a
+          href={value?.href}
+          target={target}
+          rel={target === "_blank" ? "noindex nofollow" : ""}
+        >
+          {children}
+        </a>
+      );
+    },
+  },
+  block: {
+    h1: ({ children }) => <h1 className="text-2xl">{children}</h1>,
+    h2: ({ children }) => (
+      <h2 className="text-2xl text-dark-grey">{children}</h2>
+    ),
+    normal: ({ children }) => (
+      <p className="line-clamp-2 sm:line-clamp-3 text-sm/relaxed text-gray">
+        {children}
+      </p>
+    ),
+  },
+};
+
 export const Truncate = (str: string) => {
   return str.substring(0, 200) + " ...";
 };

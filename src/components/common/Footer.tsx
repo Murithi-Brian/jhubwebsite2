@@ -39,7 +39,7 @@ const companyLinks = [
   { name: "Contact Us", href: "/contact-us" },
   { name: "Events", href: "/events" },
   { name: "Career", href: "/career" },
-  { name: "Innovations admission — join us.", href: "/admissions" },
+  // { name: "Innovations admission — join us.", href: "/admissions" },
 ];
 
 const resourceLinks = [
@@ -50,11 +50,17 @@ const resourceLinks = [
 ];
 
 const projectLinks = [
-  { name: "Climate Smart Agriculture", href: "/projects" },
-  { name: "Digital Twin Models", href: "/projects" },
-  { name: "Green Digital Innovation", href: "/projects" },
-  { name: "Digital Trade", href: "/projects" },
-  { name: "Digital Transformation", href: "/projects" },
+  {
+    name: "Climate Smart Agriculture",
+    href: "/projects/digital-transformation",
+  },
+  { name: "Digital Twin Models", href: "/projects/climate-smart-agriculture" },
+  {
+    name: "Green Digital Innovation",
+    href: "/projects/green-digital-innovation",
+  },
+  { name: "Digital Trade", href: "/projects/digital-twin-models" },
+  { name: "Digital Transformation", href: "/projects/digital-trade" },
 ];
 
 export default function Footer() {

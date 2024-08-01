@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import EventCard from "../../components/Events/EventCard";
 import { PastEvents } from "../../types/events";
+import { sanityClient } from "../../utils/sanityClient";
+import dayjs from "dayjs";
 
 const pastEvents: PastEvents[] = [
   {
@@ -98,14 +100,68 @@ const pastEvents: PastEvents[] = [
 const Events = () => {
   const { pathname } = useLocation();
   const [currentView, setCurrentView] = useState("upcoming");
+  const [AllEvents, setAllEvents] = useState([]);
+  const now = dayjs().startOf("day").toISOString();
+  const today = dayjs().endOf("day").toISOString();
+
+  console.log(now);
+  console.log(today);
+  console.log(AllEvents);
+
+  useEffect(() => {
+    let query = "";
+    if (currentView === "upcoming") {
+      // upcoming events
+      query = `*[_type == "event" && eventDateTime >= "${now}"] {
+          slug,
+          title,
+          description,
+          eventDateTime,
+          locationType[]->{
+            title
+          },
+          location,
+          "mainImage": mainImage {
+            asset->{
+              _id,
+              url
+            }
+          }
+        }`;
+    } else {
+      // past events
+      query = `*[_type == "event" && eventDateTime < "${today}"] {
+          slug,
+          title,
+          description,
+          eventDateTime,
+          locationType[]->{
+            title
+          },
+          location,
+          "mainImage": mainImage {
+            asset->{
+              _id,
+              url
+            }
+          }
+        }`;
+    }
+
+    sanityClient
+      .fetch(query)
+      .then((data) => {
+        setAllEvents(data);
+      })
+      .catch(console.error);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentView]);
 
   useEffect(() => {
     pathname === "/events/past"
       ? setCurrentView("past")
       : setCurrentView("upcoming");
   }, [pathname]);
-
-  // const events = currentView === "upcoming" ? upcomingEvents : pastEvents;
 
   return (
     <div className="max-w-screen-xl mx-auto h-fit pb-14 px-4">
@@ -121,9 +177,9 @@ const Events = () => {
         <span className="capitalize">{currentView}</span> Events
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {pastEvents.map((event, index) => (
-          <EventCard key={index} event={event} />
+      <div className="grid grid-cols-1 gap-12 max-w max-w-4xl">
+        {AllEvents.map((event) => (
+          <EventCard key={crypto.randomUUID()} event={event} />
         ))}
       </div>
     </div>
