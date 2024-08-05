@@ -16,3 +16,26 @@ export type PastEvents = {
   description: string;
   isOnLeft: boolean;
 };
+
+export type EventCardProps = {
+  slug: {
+    current: string;
+    _type: string;
+  };
+  title: string;
+  description: {
+    _type: string;
+    _key: string;
+    style: string;
+    children: [];
+    markDefs: [];
+  }[];
+  eventDateTime: string;
+  location: string;
+  mainImage: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+};
