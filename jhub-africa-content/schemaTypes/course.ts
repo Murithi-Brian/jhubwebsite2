@@ -11,9 +11,9 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'link',
-      title: 'Link',
-      type: 'url',
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     }),
     defineField({
       name: 'cost',
@@ -23,24 +23,24 @@ export default defineType({
     defineField({
       name: 'costPerLearner',
       title: 'Cost Per Learner',
-      type: 'number',
+      type: 'string',
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: 'link',
+      title: 'Link',
+      type: 'url',
+    }),
+    defineField({
+      name: 'sku',
+      title: 'SKU',
+      type: 'string',
     }),
   ],
 
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      subtitle: 'sku',
     },
   },
 })
