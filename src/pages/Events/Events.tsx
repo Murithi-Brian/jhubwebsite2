@@ -63,6 +63,7 @@ const Events = () => {
   }, [currentView]);
 
   useEffect(() => {
+    console.log(pathname);
     pathname === "/events/past"
       ? setCurrentView("past")
       : setCurrentView("upcoming");

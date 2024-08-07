@@ -1,14 +1,15 @@
+import { PortableText } from "@portabletext/react";
 import { IconClock, IconMapPin } from "@tabler/icons-react";
 import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { PortableText } from "@portabletext/react";
+import { Link } from "react-router-dom";
+import DefaultImg from "../../assets/images/events/default-poster.png";
 import {
   previewComponents,
   urlFor,
 } from "../../components/Blog/CustomComponents";
-import DefaultImg from "../../assets/images/events/default-poster.png";
 import { EventCardProps } from "../../types/events";
 
 type EventCardPropType = {
@@ -24,7 +25,12 @@ const EventCard = ({ event }: EventCardPropType) => {
 
   const formattedDate = dayjs(eventDateTime).format("MMM D");
   const formattedDay = dayjs(eventDateTime).format("ddd");
-  const formattedTime = dayjs(eventDateTime).format("h:mm A [UTC]Z");
+  const formattedTime = dayjs(eventDateTime).format("h:mm A ([UTC]Z)");
+
+  const formatDate = (date: string) => {
+    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return dayjs(date).tz(userTimezone).format("h:mm A");
+  };
 
   return (
     <article
@@ -45,34 +51,31 @@ const EventCard = ({ event }: EventCardPropType) => {
       <div className="hidden sm:block sm:basis-56">
         <LazyLoadImage
           alt={title}
-          src={
-            mainImage ? urlFor(mainImage).url() : DefaultImg
-            // : "https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-          }
+          src={mainImage ? urlFor(mainImage).url() : DefaultImg}
           className="aspect-square h-full w-full object-cover"
         />
       </div>
 
       <div className="flex flex-1 flex-col justify-between">
         <div className="border-s border-graydark/10 p-4 sm:border-l-transparent sm:p-6">
-          <a href="#">
+          <Link to={`/events/${slug.current}`} className="cursor-pointer">
             <h3 className="font-bold uppercase text-graydark">{title}</h3>
-          </a>
+          </Link>
 
-          <p className="mt-2 line-clamp-2 text-sm/relaxed text-gray">
+          <div className="mt-2 line-clamp-2 text-sm/relaxed text-gray">
             {event && (
               <PortableText
                 value={description}
                 components={previewComponents}
               />
             )}
-          </p>
+          </div>
         </div>
 
         <div className="flex items-center gap-4 px-6">
           <p className="flex items-center gap-2 text-sm font-bold text-graydark">
             <IconClock className="text-primary-purple" />
-            {formattedTime}
+            {formatDate(eventDateTime)}
           </p>
           <p className="flex items-center gap-2 text-sm font-bold text-graydark">
             <IconMapPin className="text-primary-purple" />
@@ -81,12 +84,12 @@ const EventCard = ({ event }: EventCardPropType) => {
         </div>
 
         <div className="sm:flex sm:items-end sm:justify-end">
-          <a
-            href="#"
-            className="block bg-green-800 px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-green-900 rounded-br-2xl"
+          <Link
+            to={`/events/${slug.current}`}
+            className="cursor-pointer block bg-green-800 px-5 py-3 text-center text-xs font-bold uppercase text-white transition hover:bg-green-900 rounded-br-2xl"
           >
             Register
-          </a>
+          </Link>
         </div>
       </div>
     </article>

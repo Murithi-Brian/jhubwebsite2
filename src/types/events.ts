@@ -23,6 +23,8 @@ export type EventCardProps = {
     _type: string;
   };
   title: string;
+  registrationLink: string;
+  speakers: string[];
   description: {
     _type: string;
     _key: string;
