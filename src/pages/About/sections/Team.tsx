@@ -14,10 +14,11 @@ import {
   Dominique,
   Kamochu,
   Priscilla,
-  RoseNganga,
   WilsonGichuhi,
   Sonia,
   Derrick,
+  MarianaBozesan,
+  HildaMumbi,
 } from "../../../assets/images/team";
 import TeamCard from "../../../components/About/TeamCard";
 
@@ -160,25 +161,31 @@ function Team() {
         githubLink: ``,
         linkedInLink: `https://www.linkedin.com/in/priscilla-muiruri-32825a44/?originalSubdomain=ke`,
       },
+      {
+        memberImageUrl: MarianaBozesan,
+        memberName: `Dr Mariana Bozesan`,
+        memberRole: `AI Pioneer, Integral Investor, Tech Entrepreneur`,
+        description: `Dr. Mariana Bozesan is an award-winning integral investor, an AI pioneer, and a successful serial tech-entrepreneur who is leveraging exponentially growing technologies to decarbonize the global economy and accelerate the implementation of the UN SDGs within Planetary Boundaries. She studied Computer Science and AI at Stanford University and the Karlsruhe Institute of Technology of which she is a Prominent Alumna. She is also the recipient of the Golden Angelina Award, as Europe’s Female Angel Investor of 2019 and became the Best European Early stage Investor of the Year 2016 awarded by EBAN, the European Business Angel Network. She is also full member of the prominent international Club of Rome, Fellow of the World Academy of Art and Science, and authored several books including Integral Investing: From Profit to Prosperity, a report to the Club of Rome.`,
+        twitterLink: ``,
+        facebookLink: ``,
+        githubLink: ``,
+        linkedInLink: `https://www.linkedin.com/in/marianabozesan/`,
+      },
     ],
     SECRETARIAT: [
       {
-        memberImageUrl: RoseNganga,
-        memberName: `Rose Ng'ang'a`,
-        memberRole: `Communications, Secretariat Team`,
-        description: `Rose is a seasoned professional in the realm of communications, media, and secretariat. 
-        She is passionate about the craft of storytelling, utilizing the power of multimedia and visual narratives. 
-        With a background that spans newsrooms and multimedia studios, Rose brings a wealth of experience to navigate 
-        and excel in the dynamic landscape of today's ever-evolving media industry. Her adaptability and thriving spirit 
-        make her a valuable asset in the field.`,
+        memberImageUrl: HildaMumbi,
+        memberName: `Hilda Mumbi`,
+        memberRole: `Project Manager`,
+        description: `Hilda is a dedicated and results-driven professional with extensive experience in the ERP (Enterprise Resource Planning) domain, particularly within the dynamic environment. Over the past she has perfected her skills in ERP implementation, project management, and cross-functional team collaboration, contributing to the successful growth and operational efficiency of the companies she's worked with.`,
         twitterLink: ``,
         facebookLink: ``,
-        linkedInLink: `https://www.linkedin.com/in/dr-lawrence-nderu/?originalSubdomain=ke`,
+        linkedInLink: `https://www.linkedin.com/in/hilda-mumbi-356099192/`,
       },
       {
         memberImageUrl: GeorgeGathoni,
         memberName: `George Gathoni`,
-        memberRole: `Communications, Secretariat Team`,
+        memberRole: `Communications and Administration Lead`,
         description: `George is a seasoned member of the communications, media, and secretariat department, boasting a 
         wealth of experience. His expertise lies in the art of storytelling, particularly through multimedia and visual narratives. 
         Having worked across diverse media environments, from newsrooms to multimedia studios, George has honed his skills to adapt 
@@ -202,7 +209,7 @@ function Team() {
       {
         memberImageUrl: Sonia,
         memberName: `Sonia Lomo`,
-        memberRole: `Software Engineer`,
+        memberRole: `Web Developer`,
         description: `Sonia is a passionate Software Developer with a Computer Science degree. Her journey began with lines of code and blossomed into a love for creating elegant solutions. Armed with years of experience, she thrives on building robust applications and contributing to the open-source community. When she’s not immersed in code, you’ll find him spending time with his feline friends, indulging in his slight obsession with cats.`,
         twitterLink: `https://twitter.com/sony_lomo`,
         facebookLink: ``,

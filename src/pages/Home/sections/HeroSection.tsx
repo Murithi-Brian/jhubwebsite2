@@ -7,6 +7,10 @@ import {
   impactafrica,
   aedibnet,
   taimba,
+  numeraliot,
+  assek,
+  afraken,
+  yatta,
 } from "../../../assets/images/logo";
 import Marquee from "react-fast-marquee";
 
@@ -26,7 +30,6 @@ export const partnershipLogos = [
     logo: impactafrica,
     link: "https://impactafrica.network/",
   },
-  // ian-logo.png
   {
     name: "AEDIB | NET",
     logo: aedibnet,
@@ -36,6 +39,26 @@ export const partnershipLogos = [
     name: "TAIMBA",
     logo: taimba,
     link: "https://taimba.co.ke/",
+  },
+  {
+    name: "NumeralIOT",
+    logo: numeraliot,
+    link: "https://www.numeraliot.com/",
+  },
+  {
+    name: "ASSEK",
+    logo: assek,
+    link: "https://assek.ke/",
+  },
+  {
+    name: "AFRAKEN",
+    logo: afraken,
+    link: "https://afraken.org/",
+  },
+  {
+    name: "Yatta Beekeepers",
+    logo: yatta,
+    link: "https://yattabeekeepers.co.ke/",
   },
 ];
 

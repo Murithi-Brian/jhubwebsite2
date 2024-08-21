@@ -1,40 +1,44 @@
-import RehemaNdeda from "./rehema-ndeda.jpeg";
-import LawrenceNderu from "./lawrence-nderu.png";
-import MwangiKaranja from "./mwangi-karanja.jpeg";
-import WillMurithi from "./will-muriithi.jpeg";
-import DaisyOndwari from "./ondwari-daisy.jpg";
-import IreneKimani from "./irene-kimani.jpg";
+import IreneKimani from "./irene-kimani.png";
 import JohnKinyuru from "./john-kinyuru.jpg";
+import LawrenceNderu from "./lawrence-nderu.jpg";
+import MarianaBozesan from "./mariana-bozesan.jpg";
+import MwangiKaranja from "./mwangi-karanja.jpeg";
+import DaisyOndwari from "./ondwari-daisy.jpg";
+import RehemaNdeda from "./rehema-ndeda.png";
+import WillMurithi from "./will-muriithi.png";
 
 import CateMuraga from "./cate-muraga.jpg";
-import Noumbessy from "./noumbessy.webp";
-import Dominique from "./kavuisya-dominique.png";
 import Kamochu from "./kamochu.png";
+import Dominique from "./kavuisya-dominique.png";
+import Noumbessy from "./noumbessy.webp";
 import Priscilla from "./priscilla.png";
 
-import RoseNganga from "./rose-nganga.png";
 import GeorgeGathoni from "./gathoni-george.jpeg";
+import RoseNganga from "./rose-nganga.png";
+import HildaMumbi from "./hilda-mumbi.jpeg";
 
-import WilsonGichuhi from "./wilson-gichuhi.jpg";
-import Sonia from "./sonia.jpg";
 import Derrick from "./obwatsa.jpg";
+import Sonia from "./sonia.jpg";
+import WilsonGichuhi from "./wilson-gichuhi.jpg";
 
 export {
-  GeorgeGathoni,
-  RehemaNdeda,
-  LawrenceNderu,
-  MwangiKaranja,
-  WillMurithi,
+  CateMuraga,
   DaisyOndwari,
+  Derrick,
+  Dominique,
+  GeorgeGathoni,
   IreneKimani,
   JohnKinyuru,
-  CateMuraga,
-  Noumbessy,
-  Dominique,
   Kamochu,
+  LawrenceNderu,
+  MarianaBozesan,
+  MwangiKaranja,
+  Noumbessy,
   Priscilla,
+  RehemaNdeda,
   RoseNganga,
-  WilsonGichuhi,
   Sonia,
-  Derrick,
+  WillMurithi,
+  WilsonGichuhi,
+  HildaMumbi,
 };
