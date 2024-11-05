@@ -1,10 +1,7 @@
-// import { LazyLoadImage } from "react-lazy-load-image-component";
-// import BannerImg from "../../../assets/about/aboutBanner.jpg";
 import YouTube, { YouTubeProps } from "react-youtube";
 
 const HeroAbout = () => {
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
-    // access to player in all event handlers via event.target
     event.target.pauseVideo();
   };
 
@@ -12,53 +9,34 @@ const HeroAbout = () => {
     height: "576",
     width: "1024",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
 
   return (
-    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-      <div>
-        <h1 className="block text-3xl font-semibold sm:text-title-xxl dark:text-white">
-          Discover Our Mission: Empowering Change Through Innovation and
-          Collaboration
+    <section className="max-w-[85rem] mx-auto px-6 sm:px-10 lg:px-16 text-center mb-20">
+      <div className="mb-12">
+        <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl tracking-tight text-gray-800 dark:text-white leading-tight">
+          Empowering Change Through Innovation & Collaboration
         </h1>
-        <p className="mt-3 text-lg text-secondary-blue dark:text-white">
-          Learn About Our Vision, Values, and Commitment to Sustainable Impact
+        <p className="mt-5 text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Our vision and values are built on a foundation of sustainable impact, driving transformation in the tech industry.
         </p>
+      </div>
 
-        <h2 className="mt-12 mb-4 text-xl font-medium text-success dark:text-white">
-          Who we are
+      <div className="mt-14">
+        <h2 className="text-2xl font-semibold text-primary dark:text-primary-light mb-2">
+          Who We Are
         </h2>
-        <h3 className="sm:text-title-xl text-3xl font-semibold mb-4 dark:text-white">
-          We Provide Impactful Digital Solutions For Enterprises
-        </h3>
+        <p className="text-lg sm:text-xl font-medium text-gray-700 dark:text-gray-300">
+          Delivering Impactful Digital Solutions for Enterprises
+        </p>
       </div>
 
-      <div className="flex justify-center overflow-x-auto">
-        <YouTube videoId="-jvCgrBD5LI" opts={opts} onReady={onPlayerReady} className="rounded" />
+      <div className="flex justify-center overflow-x-auto mt-12">
+        <YouTube videoId="-jvCgrBD5LI" opts={opts} onReady={onPlayerReady} className="rounded-lg shadow-lg" />
       </div>
-      {/* <div className="mt-10 sm:relative flex flex-col sm:flex-row items-center">
-        <LazyLoadImage
-          effect="blur"
-          className="w-full rounded-lg"
-          src={BannerImg}
-          alt="Image Description"
-        />
-        <div className="mt-4 sm:mt-0 sm:absolute right-0 h-fit max-w-xl bg-main flex items-center justify-center rounded-xl p-6">
-          <p className="text-white sm:text-lg text-base font-medium">
-            At Jhub, we are more than just a company - we are a community of
-            passionate individuals dedicated to driving positive change. Founded
-            on the belief that sustainable impact is achievable through
-            innovation and collaboration, we strive to make a difference in
-            Africa. Our journey began fueled by a mission of driving sustainable
-            digital transformation, providing accessible and impactful solutions
-            for small and medium-scale farmers, traders, and enterprises.{" "}
-          </p>
-        </div>
-      </div> */}
-    </div>
+    </section>
   );
 };
 
