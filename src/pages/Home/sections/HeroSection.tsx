@@ -1,19 +1,10 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import HeroImg from "../../../assets/images/hero-img-innovation-hub.jpg";
-import {
-  jkuates,
-  fundingbox,
-  impactafrica,
-  aedibnet,
-  taimba,
-  numeraliot,
-  assek,
-  afraken,
-  yatta,
-} from "../../../assets/images/logo";
+import HeroVideo from "../../../assets/images/hero-video.mp4"; // Replace with your video file path
 import Marquee from "react-fast-marquee";
+import { aedibnet, afraken, assek, fundingbox, impactafrica, jkuates, numeraliot, taimba, yatta } from "../../../assets/images/logo";
 
+// Partner logos data
 export const partnershipLogos = [
   {
     name: "JKUAT Enterprises",
@@ -89,35 +80,47 @@ export function PartnershipLogos() {
   );
 }
 
+// Main landing hero section component
 function LandingHeroSection() {
   return (
-    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center z-0">
-      <div className="lg:col-span-3">
-        <h1 className="block text-3xl font-semibold sm:text-title-xxl dark:text-white">
-          Empowering Innovators: Welcome to the Creative Community of JHUB
+    <div className="relative w-[97%] mx-auto px-4 sm:px-6 lg:px-8 mt-10"> 
+      <div className="absolute inset-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          className="w-full h-full object-cover"
+        >
+          <source src={HeroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center justify-center h-[80vh] py-20 bg-gradient-to-b from-black to-transparent bg-opacity-50">
+        <h1 className="text-5xl font-extrabold sm:text-title-xxl text-white leading-tight text-center shadow-lg">
+          Empowering Africa’s Innovators
         </h1>
-        <p className="mt-3 text-lg text-secondary-blue dark:text-white">
-          We are a one-stop hub offering comprehensive array of digital
-          solutions for societal needs
+        <p className="mt-4 text-lg text-white leading-tight text-center max-w-md shadow-lg">
+          We are a one-stop hub offering a comprehensive array of digital solutions for societal needs.
         </p>
 
-        <Link
-          className="mt-4 w-full sm:w-54 bg-success py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-2xl border border-success hover:bg-transparent hover:text-success text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          to="/about"
-        >
-          Get Started
-        </Link>
+        <div className="flex gap-4 mt-6">
+          <Link
+            className="inline-flex justify-center items-center gap-x-2 bg-success py-3 px-6 text-sm font-semibold text-white rounded-full shadow-md transition duration-300 ease-in-out transform hover:bg-white hover:text-success hover:scale-105"
+            to="/about"
+          >
+            Learn More
+          </Link>
+          <Link
+            className="inline-flex justify-center items-center gap-x-2 border border-white py-3 px-6 text-sm font-semibold text-white rounded-full shadow-md transition duration-300 ease-in-out transform hover:bg-white hover:text-success hover:scale-105"
+            to="/get-involved"
+          >
+            Get Involved
+          </Link>
+        </div>
       </div>
 
-      <div className="mt-10">
-        <LazyLoadImage
-          effect="blur"
-          className="w-full rounded-xl"
-          src={HeroImg}
-          alt="Hero Image"
-        />
-      </div>
-      {/* <PartnershipLogos /> */}
+    
     </div>
   );
 }

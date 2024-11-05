@@ -5,6 +5,7 @@ import defaultImg from "../../assets/images/blogs/default.jpeg";
 
 type BlogCardPropsType = {
   BlogPost: BlogPostType;
+  className?: string;
 };
 
 export default function BlogCard({ BlogPost }: BlogCardPropsType) {

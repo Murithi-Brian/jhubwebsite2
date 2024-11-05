@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Carousel from "../../../components/Home/Caroussel"; // Corrected spelling from Caroussel to Carousel
 import {
   jhubTeam001,
   jhubTeam002,
@@ -14,7 +15,6 @@ import {
   jhubTeam013,
   Slo,
 } from "../../../assets/images/community";
-import Carousel from "../../../components/Home/Caroussel";
 
 const carouselImages = [
   { idx: 1, img: jhubTeam001 },
@@ -34,126 +34,119 @@ const carouselImages = [
 
 const CommunityHighlights = () => {
   return (
-    <div className="mt-8 w-full mx-auto">
-      <h2 className="text-3xl text-center font-semibold text-gray-800 dark:text-white mb-4 sm:ml-8 px-4">
+    <div className="mt-10 w-full mx-auto px-4 bg-gray-50">
+      <h2 className="text-4xl text-center font-bold text-green-600 mb-6"> {/* Updated title color */}
         Community Highlights
       </h2>
 
-      {/* network */}
-      <div className="w-full bg-main px-4 text-whiter">
-        <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
-          <div className="space-y-4 w-full sm:w-auto">
-            <h3 className="text-3xl text-whiter">Network</h3>
-            <p>We serve the technology community in several ways</p>
-            <ul className="space-y-2">
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Connecting organizations and people
-              </li>
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Building market-relevant solutions
-              </li>
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Being ahead of the curve of innovation.
-              </li>
+      {/* Network Section */}
+      <div className="w-full bg-gradient-to-r  from-green-900 to-white text-white p-6 rounded-lg shadow-lg mb-8">
+        <div className="flex flex-col sm:flex-row gap-6 items-center justify-between py-10 max-w-screen-xl mx-auto">
+          <div className="space-y-4 w-full sm:w-1/2 bg-white bg-opacity-90 p-6 rounded-lg shadow-md border border-gray-200">
+            <h3 className="text-3xl text-green-600 font-semibold">Our Network</h3> {/* Updated title color */}
+            <p className="text-black">Connecting individuals and organizations to drive innovation and growth:</p>
+            <ul className="space-y-2 list-disc list-inside">
+              {[
+                "Connecting organizations and people for impactful collaborations.",
+                "Building market-relevant solutions through shared knowledge.",
+                "Staying ahead in innovation with cutting-edge resources.",
+              ].map((text) => (
+                <li key={text} className="flex items-center">
+                  <span className="mr-2 text-green-600">&#10003;</span>
+                  <span className="text-gray-800">{text}</span>
+                </li>
+              ))}
             </ul>
             <div className="w-full sm:w-32">
               <Link
                 to="/events"
-                className="block text-center border border-success text-success rounded-2xl p-3 h-12 sm:w-32 hover:bg-success hover:text-white"
+                className="block text-center border border-green-600 text-green-600 rounded-2xl p-3 h-12 hover:bg-green-600 hover:text-white transition duration-300 ease-in-out"
               >
                 View Events
               </Link>
             </div>
           </div>
-          <div>
+          <div className="w-full sm:w-1/2">
             <Carousel images={carouselImages} />
           </div>
         </div>
       </div>
 
-      {/* Events */}
-      {/* <div className="w-full bg-main px-4">
-        <div className="flex sm:flex-row-reverse flex-col gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
-          <div className="space-y-4 text-whiter w-full sm:w-auto">
-            <h3 className="text-3xl text-whiter">Events</h3>
-            <p>
-              We offer a variety of events to nurture the culture of innovation
-            </p>
-            <ul className="space-y-2">
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Physical events
-              </li>
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Virtual events
-              </li>
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Tech events
-              </li>
-            </ul>
-            <div className="w-full sm:w-32">
-              <Link
-                to="/events"
-                className="block text-center border border-success text-success rounded-2xl p-3 h-12 sm:w-32 hover:bg-success hover:text-white"
-              >
-                Explore
-              </Link>
-            </div>
-          </div>
-          <div>
-            <LazyLoadImage
-              effect="blur"
-              src={EventsImg}
-              alt="Network image"
-              className="w-[486px] rounded-lg"
-            />
-          </div>
+      {/* Empower Digital Entrepreneurs Section */}
+      <div className="w-full bg-white p-6 rounded-lg shadow-md mt-8 ">
+        <h3 className="text-3xl text-green-600 font-semibold text-center mb-4"> {/* Updated title color */}
+          Empower Digital Entrepreneurs
+        </h3>
+        <p className="text-center text-gray-600 mb-6">
+          We provide essential resources, mentorship, and support for aspiring digital entrepreneurs. Our goal is to empower individuals to grow their businesses, innovate solutions, and create positive impacts in their communities.
+        </p>
+        <div className="flex flex-col items-center mb-6">
+          <Link
+            to="/empower"
+            className="text-center border border-green-600 text-green-600 rounded-2xl p-3 h-12 hover:bg-green-600 hover:text-white transition duration-300 ease-in-out"
+          >
+            Learn More
+          </Link>
         </div>
-      </div> */}
+      </div>
 
-      {/* resources library */}
-      {/* <div className="w-full bg-secondary-background px-4">
-        <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 sm:py-20 max-w-screen-xl mx-auto">
-          <div className="space-y-4 mb-4 sm:mb-0 w-full sm:w-auto">
-            <h3 className="text-3xl">Resources Library</h3>
-            <p>We have created interesting resources</p>
-            <ul className="space-y-2">
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Courses
-              </li>
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                White papers, webinars and videos
-              </li>
-              <li key={crypto.randomUUID()} className="flex items-center">
-                <span className="mr-2 font-semibold">&#10003;</span>
-                Training toolkits
-              </li>
-            </ul>
-            <div className="w-full sm:w-32">
-              <Link
-                to="/events"
-                className="block text-center border border-success text-success rounded-2xl p-3 h-12 sm:w-32 hover:bg-success hover:text-white"
-              >
-                Explore
-              </Link>
-            </div>
+      {/* Highlighted Initiatives Section */}
+      <div className="max-w-screen-xl mx-auto mt-8">
+        <h3 className="text-3xl text-green-500 font-semibold text-center mb-4"> 
+          Our Initiatives
+        </h3>
+        <p className="text-center text-gray-600 mb-6">
+          Discover how we’re making a difference through various initiatives focused on community engagement, skill development, and innovation.
+        </p>
+
+        {/* Initiative 1 */}
+        <div className="flex flex-col sm:flex-row items-center py-8 px-4 bg-gray-100 rounded-lg shadow-lg mb-6">
+          <div className="sm:w-1/2">
+            <img src={jhubTeam001} alt="Community Engagement" className="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 border border-gray-300" />
           </div>
-          <div>
-            <LazyLoadImage
-              effect="blur"
-              src={ResourcesImg}
-              alt="Network image"
-            />
+          <div className="sm:w-1/2 sm:pl-8">
+            <h4 className="text-2xl text-green-600 font-semibold mb-2">Community Engagement</h4> {/* Updated title color */}
+            <p className="text-gray-600 mb-4">
+              Join us in initiatives aimed at bringing people together through workshops, events, and collaborative projects that foster unity and growth.
+            </p>
+            <Link to="/community-engagement" className="text-green-500 underline hover:text-green-800 transition duration-200">
+              Learn More about Community Engagement
+            </Link>
           </div>
         </div>
-      </div> */}
+
+        {/* Initiative 2 */}
+        <div className="flex flex-col sm:flex-row-reverse items-center py-8 px-4 bg-white rounded-lg shadow-lg mb-6 ">
+          <div className="sm:w-1/2">
+            <img src={jhubTeam002} alt="Skill Development" className="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 border border-gray-300" />
+          </div>
+          <div className="sm:w-1/2 sm:pr-8">
+            <h4 className="text-2xl text-green-600 font-semibold mb-2">Skill Development Programs</h4> {/* Updated title color */}
+            <p className="text-gray-600 mb-4">
+              Our skill development programs offer workshops and training sessions designed to help individuals enhance their skills and stay competitive in today's job market.
+            </p>
+            <Link to="/skill-development" className="text-green-500 underline hover:text-green-800 transition duration-200">
+              Discover our Skill Development Programs
+            </Link>
+          </div>
+        </div>
+
+        {/* Initiative 3 */}
+        <div className="flex flex-col sm:flex-row items-center py-8 px-4 bg-gray-100 rounded-lg shadow-lg mb-6">
+          <div className="sm:w-1/2">
+            <img src={jhubTeam004} alt="Innovation Labs" className="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 border border-gray-300" />
+          </div>
+          <div className="sm:w-1/2 sm:pl-8">
+            <h4 className="text-2xl text-green-600 font-semibold mb-2">Innovation Labs</h4> {/* Updated title color */}
+            <p className="text-gray-600 mb-4">
+              Our innovation labs serve as a creative space for entrepreneurs to collaborate on new ideas, test prototypes, and bring innovative solutions to life.
+            </p>
+            <Link to="/innovation-labs" className="text-green-500 underline hover:text-green-800 transition duration-200">
+              Learn More about our Innovation Labs
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
