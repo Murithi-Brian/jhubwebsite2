@@ -1,7 +1,8 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { IconArrowUpRight } from "@tabler/icons-react";
+//import { IconArrowRight } from "@tabler/icons-react";
 import { ModelType } from "../../types/project";
 import { urlFor } from "../Blog/CustomComponents";
+import './ProjectItem.css'; // Import the CSS file
 
 type ProjectItemPropsType = {
   ProjectItemProps: ModelType;
@@ -9,47 +10,58 @@ type ProjectItemPropsType = {
 };
 
 const ProjectItem = ({ ProjectItemProps, index }: ProjectItemPropsType) => {
-  const isImageOnRight = index % 2 === 0;
+  // Determine if the image should be on the right or left based on the index
+  const isImageOnRight = index % 2 === 0; // Even index = Image on the right
+
+  const handleArrowClick = () => {
+    if (ProjectItemProps.website) {
+      window.open(ProjectItemProps.website, "_blank"); // Open project link in a new tab
+    }
+  };
 
   return (
     <article className="w-full px-4">
-      {/* <div className="flex flex-col sm:flex-row gap-2 items-center justify-between py-10 max-w-screen-xl mx-auto"> */}
       <div
-        className={`flex flex-col sm:flex-row gap-2 items-center justify-between py-10 max-w-screen-xl mx-auto ${
-          isImageOnRight ? "" : "sm:flex-row-reverse"
-        }`}
+        className={`project-card project-card-container ${isImageOnRight ? 'sm-row' : 'sm-row-reverse'}`}
       >
-        <div className="space-y-4 w-full sm:w-auto max-w-xl">
-          <p className="gap-6 text-success text-sm">
+        {/* Text Section */}
+        <div className="project-card-content">
+          <p className="project-card-tags">
             {ProjectItemProps.tags.map((tag, index) => (
               <span key={index}>{tag} / </span>
             ))}
           </p>
-          <h2 className="text-3xl">{ProjectItemProps.title}</h2>
+          <h2>{ProjectItemProps.title}</h2>
           <p>{ProjectItemProps.description}</p>
-
-          <div className="w-full sm:w-32">
-            {ProjectItemProps.website && (
-              <a
-                className="mt-4 w-full sm:w-54 bg-success py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-2xl border hover:border-success hover:bg-transparent hover:text-success text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href={ProjectItemProps.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Project
-                <IconArrowUpRight />
-              </a>
-            )}
-          </div>
         </div>
-        <div className="mt-0 sm:mt-4">
+
+        {/* Image Section */}
+        <div className="project-card-image">
           <LazyLoadImage
             effect="blur"
             src={urlFor(ProjectItemProps.mainImage).url()}
             alt={ProjectItemProps.title}
-            className="w-full h-72 sm:h-96 object-cover rounded-xl"
+            className="w-full h-auto object-cover rounded-xl"
           />
         </div>
+
+        {/* Arrow (with added functionality to open the project link) */}
+        <div className="project-card-arrow" onClick={handleArrowClick}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-arrow-right"
+          >
+            
+            <polyline points="6 4, 18 12, 6 20"></polyline>
+          </svg>
+        </div>
+
       </div>
     </article>
   );

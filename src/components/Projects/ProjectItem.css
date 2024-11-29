@@ -1,0 +1,136 @@
+/* ProjectItem.css */
+
+/* Main container for the card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover effect for the whole card */
+.project-card:hover {
+  background-color:#32B8B0;
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Content (Text and Tags) inside the card */
+.project-card-content {
+  width: 100%;
+  max-width: 650px;
+  padding: 1rem;
+}
+
+.project-card-content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.project-card-content p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.project-card-tags {
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+/* Arrow styling */
+.project-card-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 75%;
+  width: 40px;
+  background-color: #ffffff;
+  color: #6a0dad;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease, left 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.project-card-arrow svg {
+  width: 24px; /* Adjust size */
+  height: 24px;
+  stroke: #6a0dad; /* Default color */
+  transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+.project-card-arrow:hover svg {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  stroke: #32b8b0; /* Change color on hover */
+}
+
+
+
+/* When the image is on the right (sm-row), place the arrow on the left */
+.project-card-container.sm-row .project-card-arrow {
+  left: -40px; /* Sidebar arrow on the left */
+  right: auto; /* Reset right to avoid conflict */
+}
+
+/* When the image is on the left (sm-row-reverse), place the arrow on the right */
+.project-card-container.sm-row-reverse .project-card-arrow {
+  right: -40px; /* Sidebar arrow on the right */
+  left: auto; /* Reset left to avoid conflict */
+}
+
+/* Show the arrow on hover */
+.project-card-container.sm-row:hover .project-card-arrow {
+  left: 10px; /* Animate arrow to the left side */
+  opacity: 1; /* Ensure it becomes visible */
+  right: auto; /* Reset right to avoid double arrow */
+}
+
+.project-card-container.sm-row-reverse:hover .project-card-arrow {
+  right: 10px; /* Animate arrow to the right side */
+  opacity: 1; /* Ensure it becomes visible */
+  left: auto; /* Reset left to avoid double arrow */
+}
+
+/* Image styling */
+.project-card-image {
+  width: 100%;
+  max-width: 600px; /* Limit image width */
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+/* Flex container for image and text */
+.project-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Layout for alternating image and text */
+.project-card-container.sm-row {
+  flex-direction: row;
+}
+
+.project-card-container.sm-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.project-card-container > .project-card-content {
+  margin-bottom: 1rem;
+}
+
+.project-card-container > .project-card-image {
+  flex: 1;
+}
+
