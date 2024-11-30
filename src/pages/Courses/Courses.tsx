@@ -1,8 +1,13 @@
-import { IconExternalLink, IconHelpHexagon } from "@tabler/icons-react";
+import { IconSearch, IconExternalLink, IconHelpHexagon } from "@tabler/icons-react";
 import Tooltip from "../../components/common/Tooltip";
 import { useState, useEffect } from "react";
 import { sanityClient } from "../../utils/sanityClient";
 import { CoursePropsType } from "../../types/course";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Navigation } from "swiper";
+import './TrainingProgram.css';
+
 
 // type CourseProps = {
 //   program: string;
@@ -262,6 +267,7 @@ import { CoursePropsType } from "../../types/course";
 
 export default function TrainingProgram() {
   const [allCourses, setAllCourses] = useState<CoursePropsType[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     sanityClient
@@ -277,42 +283,110 @@ export default function TrainingProgram() {
       )
       .then((data: CoursePropsType[]) => {
         setAllCourses(data);
-        // console.log(data);
       })
       .catch(console.error);
   }, []);
 
+  // Filter courses by search query
+  const filteredCourses = allCourses.filter(course =>
+    course.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="max-w-screen-xl mx-auto h-fit pb-14 px-4">
-      <h1 className="text-title-xxl sm:text-3xl font-bold mb-6 text-center">
-        Grow your skillset with our amazing <br />
-        courses{" "}
-      </h1>
-      <p className="text-lg mb-4 text-center">
-        We have carefully curated courses that cover diverse topics, ensuring
-        there&apos;s something for everyone&apos;s professional development
-        <br />
-        journey.
-      </p>
-      <h3 className="text-title-xl sm:text-2xl font-semibold my-8">
-        All Courses
-      </h3>
+      
+      {/* Slideshow */}
+      <div className="relative mb-8 rounded-[10px]">      
+<Swiper
+  modules={[Navigation]}
+  navigation={{ prevEl: ".prev-btn", nextEl: ".next-btn" }}
+  loop={true}
+  className="mb-8"
+>
+  <SwiperSlide>
+    <div className="relative h-[450px]">
+      <img
+        src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg"
+        alt="Students studying"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-30 text-white flex items-center justify-center">
+        <h2 className="text-3xl font-bold">
+          "Unlock Your Potential with Knowledge"
+        </h2>
+      </div>
+    </div>
+  </SwiperSlide>
+  <SwiperSlide>
+    <div className="relative h-[450px]">
+      <img
+        src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg"
+        alt="Diverse professionals"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-30 text-white flex items-center justify-center">
+        <h2 className="text-3xl font-bold">
+          "Your Career, Your Growth"
+        </h2>
+      </div>
+    </div>
+  </SwiperSlide>
+  <SwiperSlide>
+    <div className="relative h-[450px]">
+      <img
+        src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+        alt="IT professionals working"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-30 text-white flex items-center justify-center">
+        <h2 className="text-3xl font-bold">
+          "Learn Today, Lead Tomorrow"
+        </h2>
+      </div>
+    </div>
+  </SwiperSlide>
+</Swiper>
 
+
+        {/* Navigation Arrows */}
+        <div className="absolute top-1/2 transform -translate-y-1/2 left-2 z-10 prev-btn text-white bg-gray-700 bg-opacity-60 hover:bg-opacity-100 p-2 rounded-full cursor-pointer">
+          &#9664;
+        </div>
+        <div className="absolute top-1/2 transform -translate-y-1/2 right-2 z-10 next-btn text-white bg-gray-700 bg-opacity-60 hover:bg-opacity-100 p-2 rounded-full cursor-pointer">
+          &#9654;
+        </div>
+      </div>
+
+      {/* Search Bar */}
+      <div className="relative mb-8">
+        <input
+          type="text"
+          placeholder="Search courses..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full p-4 pl-4 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-lg"
+        />
+        <IconSearch
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer"
+          size={24}
+        />
+      </div>
+
+
+      {/* Course List */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {allCourses.map(
+        {filteredCourses.map(
           ({
             title,
             cost,
             description,
             link,
             sku,
-            // quantity,
             costPerLearner,
-            // category,
           }) => (
             <div
               key={sku}
-              className="w-full p-6 rounded-lg shadow-card flex flex-col justify-between"
+              className="w-full p-6 rounded-lg shadow-card flex flex-col justify-between transform transition-transform duration-200 hover:scale-105 hover:shadow-xl"
             >
               <div className="space-y-4">
                 <h2 className="text-xl font-bold">{title}</h2>
