@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import BaseLayout from "../components/common/BaseLayout";
-import Home from "../pages/Home/Home";
+import Home from "../pages/Home/index";
 import { Suspense } from "react";
 import Spinners from "../components/common/Spinner";
 import Error10 from "../pages/NotFound";
@@ -15,7 +15,7 @@ import Career from "../pages/Career/Career";
 import SinglePost from "../pages/Blog/SinglePost";
 import ContactUs from "../pages/ContactUs";
 import Documentation from "../pages/Documentation";
-import FAQ from "../pages/Home/sections/FAQ";
+//import FAQ from "../pages/Home/sections/FAQ";
 import CookiePolicy from "../pages/Legal/CookiePolicy";
 import SingleModelView from "../pages/ProjectModelView/SingleModelView";
 import SingleEventView from "../pages/Events/SingleEventView";
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
     element: (
       <Suspense fallback={<Spinners />}>
         <BaseLayout>
-          <Home />
+          <Home/>
         </BaseLayout>
       </Suspense>
     ),
@@ -189,16 +189,7 @@ export const router = createBrowserRouter([
       </Suspense>
     ),
   },
-  {
-    path: "/faq",
-    element: (
-      <Suspense fallback={<Spinners />}>
-        <BaseLayout>
-          <FAQ />
-        </BaseLayout>
-      </Suspense>
-    ),
-  },
+
   {
     path: "/cookie-policy",
     element: (

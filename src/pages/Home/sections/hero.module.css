@@ -1,0 +1,189 @@
+/* Hero.css */
+.background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  filter: brightness(0.8);
+}
+
+/* Translucent overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(3, 10, 97, 0.7); /* Translucent black */
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+@keyframes move_wave {
+    0% {
+      transform: translateX(0) translateZ(0) scaleY(1);
+    }
+    50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.55);
+    }
+    100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1);
+    }
+  }
+  
+  .waveWrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    bottom: 0;
+  }
+  
+  .bgTop {
+    z-index: 3;
+    opacity: 0.5;
+  }
+  
+  .bgMiddle {
+    z-index: 2;
+    opacity: 0.75;
+  }
+  
+  .bgBottom {
+    z-index: 1;
+    opacity: 1;
+  }
+  
+  .wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    transform-origin: center bottom;
+  }
+  
+  .waveTop {
+    background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');
+    animation: move_wave 6s linear infinite;
+  }
+  
+  .waveMiddle {
+    background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');
+    animation: move_wave 8s linear infinite;
+  }
+  
+  .waveBottom {
+    background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');
+    animation: move_wave 10s linear infinite;
+  }
+  
+  /* CTA Section Styling */
+.ctaContainer {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+  margin-top: 3rem; 
+  border-radius: 8px; 
+  box-shadow: 2px 2px 10px rgba(0, 0, 255, 0.5);
+
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Header */
+.ctaHeader {
+  font-size: 2.5rem;  /* Slightly larger header for better readability */
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 3rem; /* Increase margin to give the section more air */
+  letter-spacing: 2px; /* Adds a bit of spacing between the letters for a more modern look */
+}
+
+/* Partner Logos Container */
+.partnersContainer {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Marquee Styling */
+.marqueeContainer {
+  display: flex;
+  gap: 3rem; 
+  padding: 2rem; 
+  flex-wrap: nowrap; 
+}
+
+/* Partner Logo */
+.partnerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  margin: 0 10px; 
+}
+
+
+.logoImg {
+  max-height: 50px;  
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-bottom: 1rem; 
+}
+
+
+.partnerLogo:hover .logoImg {
+  transform: scale(1.1);  
+  opacity: 0.8;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .ctaHeader {
+    font-size: 2rem; 
+  }
+
+  .marqueeContainer {
+    gap: 1.5rem; 
+  }
+
+  .logoImg {
+    max-height: 60px;  
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaContainer {
+    padding: 3rem 1rem; 
+  }
+
+  .ctaHeader {
+    font-size: 1.75rem; 
+    margin-bottom: 2rem; 
+  }
+
+  .marqueeContainer {
+    gap: 1rem; 
+  }
+
+  .logoImg {
+    max-height: 50px;  
+  }
+}

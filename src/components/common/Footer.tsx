@@ -1,15 +1,10 @@
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandTiktok,
-  IconBrandTwitter,
-  IconBrandYoutube,
-} from "@tabler/icons-react";
-import Logo from "../../assets/images/logo/jhub-logo-new.svg";
+//import Link from "next/link";
+//import React from "react";
+import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin, IconBrandTiktok, IconBrandTwitter, IconBrandYoutube } from "@tabler/icons-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/images/logo/jhub-logo.png";
+
 
 type FooterLinks = {
   name: string;
@@ -18,14 +13,13 @@ type FooterLinks = {
 
 function renderLinks(links: FooterLinks[]) {
   return links.map((link, index) => (
-    <p key={index}>
+    <li key={index}>
       <Link
-        className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-        to={link.href}
-      >
+        className="block text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200"
+        to={"link.href"}      >
         {link.name}
       </Link>
-    </p>
+    </li>
   ));
 }
 
@@ -35,174 +29,99 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
-  { name: "About us", href: "/about" },
+  { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact-us" },
   { name: "Events", href: "/events" },
   { name: "Career", href: "/career" },
-  // { name: "Innovations admission — join us.", href: "/admissions" },
 ];
 
 const resourceLinks = [
   { name: "Legal", href: "/cookie-policy" },
-  { name: "Contact Us", href: "/contact-us" },
   { name: "FAQ", href: "/faq" },
   { name: "Documentation", href: "/documentation" },
 ];
 
 const projectLinks = [
-  {
-    name: "Climate Smart Agriculture",
-    href: "/projects/digital-transformation",
-  },
+  { name: "Climate Smart Agriculture", href: "/projects/digital-transformation" },
   { name: "Digital Twin Models", href: "/projects/climate-smart-agriculture" },
-  {
-    name: "Green Digital Innovation",
-    href: "/projects/green-digital-innovation",
-  },
+  { name: "Green Digital Innovation", href: "/projects/green-digital-innovation" },
   { name: "Digital Trade", href: "/projects/digital-twin-models" },
   { name: "Digital Transformation", href: "/projects/digital-trade" },
 ];
 
 export default function Footer() {
-  const { pathname } = useLocation();
-
-  const isDashboardPage = pathname === "/dashboard";
   const currentYear = new Date().getFullYear();
 
-  if (isDashboardPage) {
-    return null;
-  }
-
   return (
-    <footer className="bg-main text-white">
-      <div className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="mb-8">
-          <h2 className="text-white text-4xl font-medium text-center">
-            <span className="text-success">INVESTING</span> IN digital future
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
-          {/* Logo */}
-          <div className="col-span-full lg:col-span-1">
-            <Link
-              className="hidden lg:block flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              to="/"
-              aria-label="Brand"
-            >
-              <LazyLoadImage effect="blur" src={Logo} alt="JHUB Africa" />
+    <footer 
+          className="bg-white text-black py-10" 
+          style={{ boxShadow: "0 -4px 6px -1px rgba(0, 0, 0, 0.1)" }}
+        >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-between items-start">
+          {/* Logo and social media icons */}
+          <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
+            <Link to="/" className="mb-4">
+              <LazyLoadImage src={Logo} alt="JHUB Africa Logo" effect="blur" className="w-32 md:w-40" />
             </Link>
-            {/* social media */}
-            <div className="space-x-4 flex justify-center items-center">
-              {/* <DarkModeSwitcher /> */}
-              <a
-                href="https://twitter.com/JHUBAfrica"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconBrandTwitter />{" "}
+            <div className="flex space-x-4">
+              <a href="https://twitter.com/JHUBAfrica" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <IconBrandTwitter />
               </a>
-              <a
-                href="https://www.youtube.com/channel/UCHN-H46LsYBXPGoOOsw4ffQ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconBrandYoutube />{" "}
+              <a href="https://www.youtube.com/channel/UCHN-H46LsYBXPGoOOsw4ffQ" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <IconBrandYoutube />
               </a>
-              <a
-                href="https://www.facebook.com/people/JHUB-Africa/61554202584585/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://www.facebook.com/people/JHUB-Africa/61554202584585/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <IconBrandFacebook />
               </a>
-              <a
-                href="https://www.linkedin.com/company/jhubafrica/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://www.linkedin.com/company/jhubafrica/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <IconBrandLinkedin />
               </a>
-
-              <a
-                href="https://www.tiktok.com/@jhubafrica"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://www.tiktok.com/@jhubafrica" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <IconBrandTiktok />
               </a>
-              <a
-                href="https://www.instagram.com/jhubafrica/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://www.instagram.com/jhubafrica/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                 <IconBrandInstagram />
               </a>
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase text-white dark:text-gray-100">
-              Services
-            </h4>
-            <div className="mt-3 grid space-y-3 text-base">
-              {renderLinks(serviceLinks)}
+          {/* Footer navigation links */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div>
+              <h4 className="text-lg font-semibold mb-2">Services</h4>
+              <ul className="space-y-2">
+                {renderLinks(serviceLinks)}
+              </ul>
             </div>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Company
-            </h4>
-            <div className="mt-3 grid space-y-3 text-base">
-              {renderLinks(companyLinks)}
+            <div>
+              <h4 className="text-lg font-semibold mb-2">Company</h4>
+              <ul className="space-y-2">
+                {renderLinks(companyLinks)}
+              </ul>
             </div>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Resources
-            </h4>
-            <div className="mt-3 grid space-y-3 text-base">
-              {renderLinks(resourceLinks)}
+            <div>
+              <h4 className="text-lg font-semibold mb-2">Resources</h4>
+              <ul className="space-y-2">
+                {renderLinks(resourceLinks)}
+              </ul>
             </div>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase dark:text-gray-100">
-              Projects
-            </h4>
-            <div className="mt-3 grid space-y-3 text-base">
-              {renderLinks(projectLinks)}
+            <div>
+              <h4 className="text-lg font-semibold mb-2">Projects</h4>
+              <ul className="space-y-2">
+                {renderLinks(projectLinks)}
+              </ul>
             </div>
           </div>
         </div>
 
-        <div className="pt-5 mt-5 border-t border-gray-200 dark:border-gray-700">
-          <div className="sm:flex sm:justify-between sm:items-center sm:space-y-0 space-y-4">
-            <div className="flex justify-center sm:justify-between items-center gap-x-3">
-              <div className="space-x-4 text-base ms-4">
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/legal"
-                >
-                  Terms
-                </Link>
-                <Link
-                  className="inline-flex gap-x-2 text-gray-600 hover:text-success hover:underline dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  to="/legal"
-                >
-                  Privacy
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 text-center">
-                © {currentYear} All rights reserved
-              </p>
+        {/* Footer bottom section */}
+        <div className="mt-8 border-t border-gray-700 pt-4">
+          <div className="flex justify-between items-center">
+            <p className="text-sm">© {currentYear} JHUB Africa. All rights reserved.</p>
+            <div className="flex space-x-4">
+              <Link to="/terms" className="text-gray-400 hover:text-white text-sm">Terms</Link>
+              <Link to="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy</Link>
             </div>
           </div>
         </div>
